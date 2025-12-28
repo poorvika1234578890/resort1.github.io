@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resort Booking Form</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      width: 380px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #009688;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: 0.2s;
+      background-color: #f9f9f9;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #009688;
+      background-color: #fff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 150, 136, 0.3);
+    }
+
+    button {
+      width: 100%;
+      background-color: #009688;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background-color: #00796b;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Resort Booking</h2>
+    <form name="submit-to-google-sheet" id="bookingForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="checkin">Check-in Date</label>
+      <input type="date" id="checkin" name="checkin" required>
+
+      <label for="checkout">Check-out Date</label>
+      <input type="date" id="checkout" name="checkout" required>
+
+      <label for="guests">Number of Guests</label>
+      <input type="number" id="guests" name="guests" min="1" max="50" required>
+
+      <label for="message">Special Requests</label>
+      <textarea id="message" name="message" rows="3"></textarea>
+
+      <button type="submit" id="submitBtn">Book Now</button>
+    </form>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbziTml8StEdIxAs_EXheqDcJjA3qMA4j65hh52W8GusYcfDpzTyvXkBTz6J7VnHHI-1/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          window.location.href = "thankyou.html"; // Redirect here
+        })
+        .catch(error => {
+          alert("❌ Error! Booking not added.");
+          console.error('Error!', error.message);
+          submitBtn.disabled = false;
+        });
+    });
+  </script>
+</body>
+</html>

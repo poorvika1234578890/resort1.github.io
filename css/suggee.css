@@ -1,0 +1,8893 @@
+<<<<<<< HEAD
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f7f7f7;
+  --bg-card: #ffffff;
+  --primary: #0b7c6b;
+  --primary-soft: #e6f3f1;
+  --accent: #f7941d;
+  --text: #222;
+  --muted: #666;
+  --border: #e0e0e0;
+  --radius-lg: 16px;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --transition: 0.25s ease;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* HEADER WRAPPER */
+header {
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+}
+
+/* MAIN HEADER AREA */
+.main-header-area {
+    padding: 20px 40px;
+    position: relative;
+}
+
+/* Make the row behave like a proper 3-part layout:
+   [CENTERED MENU]       [RIGHT ICONS + BUTTON]
+*/
+.header-area .row.align-items-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LEFT COLUMN – center menu inside this column */
+.col-xl-6.col-lg-6 {
+    display: flex;
+    justify-content: center;
+}
+
+/* NAV MENU UL */
+.main-menu nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;                 /* equal spacing between items */
+    list-style: none;
+}
+
+/* NAV ITEMS */
+#navigation li {
+    list-style: none;
+    position: relative;
+}
+
+#navigation li a {
+    color: #000;               /* TEXT BLACK */
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Underline effect */
+#navigation li a:hover,
+#navigation li a.active {
+    border-bottom: 2px solid #000;
+}
+
+/* SUBMENU DROPDOWNS */
+.submenu {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #ffffff;
+    padding: 10px 0;
+    width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+    z-index: 9999;
+}
+
+#navigation li:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 35px;
+}
+
+.submenu li {
+    margin: 0;
+    padding: 0;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #000 !important;
+    border: none;
+}
+
+.submenu li a:hover {
+    background: #f2f2f2;
+}
+
+/* RIGHT SIDE – ICONS + BUTTON */
+.book_room {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* SOCIAL ICONS WRAPPER */
+.socail_links ul {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socail_links ul li a {
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul li a i {
+    font-size: 22px;
+    color: #000;               /* ICONS BLACK & VISIBLE */
+    transition: 0.2s;
+}
+
+.socail_links ul li a i:hover {
+    color: #ff7900;
+}
+
+/* BUTTON */
+.book_btn a {
+    background: #ff7e00;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff !important;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.book_btn a:hover {
+    background: #ff9100;
+}
+
+/* MOBILE MENU – simplified */
+.mobile_menu {
+    display: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+
+    .main-menu {
+        display: none !important;
+    }
+
+    .mobile_menu {
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    
+
+    .book_room {
+        justify-content: center !important;
+        margin-top: 15px;
+    }
+}
+@media (max-width: 767px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+  header {
+    position: relative;
+  }
+
+  .main-header-area {
+    padding: 15px 20px;
+  }
+
+  .book_room {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  .search-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .search-input {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-input button {
+    width: 100%;
+  }
+}
+/* ===============================
+   FOOTER
+================================= */
+.footer {
+    background: #000;
+    color: #bdbdbd;
+    font-family: 'Inter', sans-serif;
+}
+
+/* TOP SECTION */
+.footer_top {
+    padding: 80px 0 60px;
+}
+
+.footer_widget {
+    margin-bottom: 30px;
+}
+
+.footer_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+/* TEXT */
+.footer_text {
+    font-size: 15px;
+    line-height: 28px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+/* GET DIRECTION BUTTON */
+.line-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.line-button:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+/* NAVIGATION LIST */
+.footer_widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_widget ul li {
+    margin-bottom: 12px;
+}
+
+.footer_widget ul li a {
+    color: #bdbdbd;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer_widget ul li a:hover {
+    color: #ff7a00;
+}
+
+/* NEWSLETTER */
+.newsletter_form {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.newsletter_form input {
+    flex: 1;
+    height: 45px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.newsletter_form button {
+    height: 45px;
+    padding: 0 28px;
+    background: #009dff;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter_form button:hover {
+    background: #007edb;
+}
+
+.newsletter_text {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+/* ===============================
+   COPYRIGHT SECTION
+================================= */
+.copy-right_text {
+    padding: 25px 0;
+}
+
+.footer_border {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 25px;
+}
+
+.copy_right {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.copy_right a {
+    color: #009dff;
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.socail_links ul li a {
+    font-size: 18px;
+    color: #bdbdbd;
+    transition: 0.3s;
+}
+
+.socail_links ul li a:hover {
+    color: #ff7a00;
+}
+/* Container */
+
+.container {
+  width: min(1120px, 100% - 32px);
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 16px 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.breadcrumb .current {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Header section */
+
+.stay-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 16px 0 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.stay-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.stay-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.location {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #fff4e5;
+  color: #b97312;
+  border: 1px solid #ffd9a3;
+}
+
+.stay-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  max-width: 420px;
+  max-width: 100% !important;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.spec-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Header right */
+
+.stay-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.share-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.share-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.icon-btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 0.75rem;
+  padding: 6px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.icon-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Main two-column layout */
+
+.stay-main {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 28px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+/* Gallery */
+
+.gallery {
+  margin-bottom: 24px;
+}
+
+.gallery-main {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #e6e6e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 340px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Show grey placeholder if src is empty */
+img[src=""] {
+  background: #dcdcdc;
+}
+
+/* Thumbnails */
+
+.gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.thumb {
+  flex: 1;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100px;
+  display: block;
+  object-fit: cover;
+}
+
+.thumb.active,
+.thumb:hover {
+  border-color: var(--primary);
+}
+
+/* Section blocks */
+
+.section-block {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 16px;
+}
+
+.section-block h2,
+.section-block h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.section-block h4 {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+
+/* Chips (Amenities/Activities) */
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  margin-top: 6px;
+}
+
+.chip {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fafafa;
+}
+
+/* Nearby & Terms */
+
+.nearby-list,
+.terms-list {
+  list-style: none;
+  margin-top: 6px;
+}
+
+.nearby-list li,
+.terms-list li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+/* Enquiry card (aside) */
+
+.enquiry-card {
+  position: sticky;
+  top: 16px;
+  align-self: flex-start;
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 18px 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.enquiry-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.price-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.price-note span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-soft);
+}
+
+/* Form */
+
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.enquiry-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: var(--muted);
+  gap: 3px;
+}
+
+.enquiry-form input {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 7px 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.enquiry-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px rgba(11, 124, 107, 0.15);
+}
+
+.stays-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.carousel-buttons button {
+  border: none;
+  background: #000;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Carousel container */
+.carousel {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+/* Hide scrollbar */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* ✅ 3 cards per slide (DESKTOP) */
+.carousel .card-link {
+  flex: 0 0 calc((100% - 20px) / 3); /* 3 cards */
+  scroll-snap-align: start;
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+
+
+/* Force FLEX layout and gap only for this section */
+/* ================================
+   ✅ FINAL SIDE-BY-SIDE CAROUSEL FIX
+   ================================ */
+
+#stays {
+  margin-top: 30px;
+}
+
+#cards {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+  scrollbar-width: none;
+}
+
+#cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* ✅ 3 CARDS PER VIEW — DESKTOP */
+#cards .card-link {
+  flex: 0 0 calc((100% - 32px) / 3); /* 3 cards */
+  scroll-snap-align: start;
+  text-decoration: none;
+}
+
+/* ✅ Card height & hover */
+#cards .card {
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+#cards .card:hover {
+  transform: translateY(-6px);
+}
+
+/* ✅ TABLET — 2 CARDS */
+@media (max-width: 1024px) {
+  #cards .card-link {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+
+/* ✅ MOBILE — 1 CARD */
+@media (max-width: 768px) {
+  #cards .card-link {
+    flex: 0 0 100%;
+  }
+}
+
+
+/* ----- CAROUSEL ----- */
+
+.hero-carousel {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.hero-track-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* ✅ EQUAL WIDTH + HEIGHT */
+.hero-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ equal width */
+  gap: 3px;
+  padding: 0 12px;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 450px;       /* ✅ equal height */
+  object-fit: cover;  /* ✅ crop uniformly */
+  border-radius: 0px;
+  background: #ccc;
+}
+
+/* arrows */
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  font-size: 28px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.hero-nav.prev { left: 15px; }
+.hero-nav.next { right: 15px; }
+
+.hero-nav:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* mobile */
+/* ================================
+   HERO CAROUSEL — MOBILE FIX
+   ONE IMAGE PER SWIPE
+   ================================ */
+
+
+/* HEADER WRAPPER */
+header {
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+}
+
+/* MAIN HEADER AREA */
+.main-header-area {
+    padding: 20px 40px;
+    position: relative;
+}
+
+/* Make the row behave like a proper 3-part layout:
+   [CENTERED MENU]       [RIGHT ICONS + BUTTON]
+*/
+.header-area .row.align-items-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LEFT COLUMN – center menu inside this column */
+.col-xl-6.col-lg-6 {
+    display: flex;
+    justify-content: center;
+}
+
+/* NAV MENU UL */
+.main-menu nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;                 /* equal spacing between items */
+    list-style: none;
+}
+
+/* NAV ITEMS */
+#navigation li {
+    list-style: none;
+    position: relative;
+}
+
+#navigation li a {
+    color: #000;               /* TEXT BLACK */
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Underline effect */
+#navigation li a:hover,
+#navigation li a.active {
+    border-bottom: 2px solid #000;
+}
+
+/* SUBMENU DROPDOWNS */
+.submenu {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #ffffff;
+    padding: 10px 0;
+    width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+    z-index: 9999;
+    display: block;
+}
+
+#navigation li:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 35px;
+}
+
+.submenu li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #000 !important;
+    border: none;
+    width: 100%;
+}
+
+.submenu li a:hover {
+    background: #f2f2f2;
+}
+
+/* RIGHT SIDE – ICONS + BUTTON */
+.book_room {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* SOCIAL ICONS WRAPPER */
+.socail_links ul {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socail_links ul li a {
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul li a i {
+    font-size: 22px;
+    color: #000;               /* ICONS BLACK & VISIBLE */
+    transition: 0.2s;
+}
+
+.socail_links ul li a i:hover {
+    color: #ff7900;
+}
+
+/* BUTTON */
+.book_btn a {
+    background: #ff7e00;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff !important;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.book_btn a:hover {
+    background: #ff9100;
+}
+
+/* MOBILE MENU – simplified */
+.mobile_menu {
+    display: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+
+    .main-menu {
+        display: none !important;
+    }
+
+    .mobile_menu {
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    
+
+    .book_room {
+        justify-content: center !important;
+        margin-top: 15px;
+    }
+}
+@media (max-width: 767px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+  header {
+    position: relative;
+  }
+
+  .main-header-area {
+    padding: 15px 20px;
+  }
+
+  .book_room {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  .search-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .search-input {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-input button {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card-link {
+    min-width: 90%;
+    scroll-snap-align: start;
+      margin: 0 !important; 
+  }
+
+  #cards::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.footer {
+    background: #000;
+    color: #bdbdbd;
+    font-family: 'Inter', sans-serif;
+}
+
+/* TOP SECTION */
+.footer_top {
+    padding: 80px 0 60px;
+}
+
+.footer_widget {
+    margin-bottom: 30px;
+}
+
+.footer_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+/* TEXT */
+.footer_text {
+    font-size: 15px;
+    line-height: 28px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+/* GET DIRECTION BUTTON */
+.line-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.line-button:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+/* NAVIGATION LIST */
+.footer_widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_widget ul li {
+    margin-bottom: 12px;
+}
+
+.footer_widget ul li a {
+    color: #bdbdbd;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer_widget ul li a:hover {
+    color: #ff7a00;
+}
+
+/* NEWSLETTER */
+.newsletter_form {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.newsletter_form input {
+    flex: 1;
+    height: 45px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.newsletter_form button {
+    height: 45px;
+    padding: 0 28px;
+    background: #ff7a00;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter_form button:hover {
+    background: #ff7a00;
+}
+
+.newsletter_text {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+/* ===============================
+   COPYRIGHT SECTION
+================================= */
+.copy-right_text {
+    padding: 25px 0;
+}
+
+.footer_border {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 25px;
+}
+
+.copy_right {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.copy_right a {
+    color: #009dff;
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.socail_links ul li a {
+    font-size: 18px;
+    color: #bdbdbd;
+    transition: 0.3s;
+}
+
+.socail_links ul li a:hover {
+    color: #ff7a00;
+}
+
+
+
+
+
+.stay-header {
+  margin-bottom: 25px;
+}
+
+.stay-specs {
+  max-width: 100% !important;
+}
+
+.spec-value {
+  white-space: nowrap;
+}
+
+
+/* Header bottom border like Malnad */
+.stay-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+/* Location styling */
+.stay-meta .location {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* Tag styling (Average badge) */
+.tag-average {
+  background: #ffe9c7;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #6b4b00;
+}
+
+/* Share section alignment */
+.stay-header-right {
+  text-align: right;
+}
+
+.stay-header-right .share-label {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.icon-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+
+/* ============================
+   PERFECT MALNAD SPECS STYLING
+   ============================ */
+
+/* ⭐ SPECIFICATIONS SECTION – EXACT MALNAD STYLE */
+.stay-specs {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 22px 0;
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  box-shadow: none !important;
+}
+
+/* INDIVIDUAL SPEC BOXES */
+.spec-box {
+  text-align: center;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  border-right: 1px dashed #d9d9d9;
+}
+
+.spec-box:last-child {
+  border-right: none;
+}
+
+/* ICON STYLE */
+.spec-icon {
+  width: 34px;
+  opacity: 0.50;
+  margin-bottom: 10px;
+}
+
+/* TOP LABEL */
+.spec-title {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* MAIN VALUE */
+.spec-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+}
+
+
+/* Header tweaks */
+.stay-header {
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+/* 8-Image Gallery (Malnad Format) */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 220px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.55);
+  padding: 5px 14px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(3px);
+}
+
+
+
+
+
+/* 6/12/25 */
+/* ⭐ Breadcrumb */
+.property-breadcrumb {
+  font-size: 0.9rem;
+  color: #ff7900;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.property-breadcrumb a {
+  color: #ff7900;
+  text-decoration: none;
+}
+.property-breadcrumb .current {
+  color: #555;
+}
+
+/* ⭐ Title & Meta */
+.property-header {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.property-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.property-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 1rem;
+  color: #666;
+}
+.property-location i {
+  color: #ff7900;
+  margin-right: 6px;
+}
+.property-stars {
+  color: #ffb400;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+}
+.property-rating-text {
+  font-size: 0.85rem;
+  background: #fff3f3;
+  color: #ff7900;
+  border: 1px solid #f3d1d1;
+  padding: 3px 14px;
+  border-radius: 50px;
+}
+
+
+.property-breadcrumb,
+.property-header {
+  width: 100%;
+  margin-left: 0;
+}
+
+
+
+/* ⭐ MAIN WHITE CARD FOR LEFT SECTION */
+.stay-card-wrapper {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+  margin-top: -40px;
+}
+
+/* Align breadcrumb + title properly inside card */
+.property-breadcrumb,
+.property-header {
+  width: 100%;
+  margin-left: 0;
+}
+
+
+/* Single Share Button – Right of Title */
+/* ⭐ Share Button (Floating beside title) */
+.share-btn {
+  background: #ff7900;     /* same pink shade */
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  right: -55px;            /* moved outside card layout */
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  transition: 0.25s ease;
+  z-index: 5;
+}
+
+.share-btn i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.share-btn:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: #ff7900;
+}
+
+
+/* Position Fix */
+.property-header {
+  position: relative;
+  padding-right: 70px; /* space for floating button */
+}
+
+
+.share-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+
+/* ============================
+   MALNADSTAYS PRICING EXACT STYLE
+   ============================ */
+
+/* ⭐ PERFECT MALNAD PRICING SECTION */
+/* ⭐ MALNADSTAYS PRICING EXACT STYLE — FINAL */
+
+.pricing-section {
+  margin-top: 25px;
+}
+
+.pricing-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  color: #000;
+}
+
+/* 2×2 Grid */
+.pricing-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 90px;
+  row-gap: 35px;
+}
+
+/* Block  */
+.pricing-item {
+  text-align: left;
+  line-height: 1.45;
+}
+
+/* Strike Price */
+.pricing-item .strike {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  margin-bottom: 6px;
+  width: fit-content;
+  position: relative;
+}
+
+.pricing-item .strike::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: #888;
+  top: 50%;
+  left: 0;
+}
+
+/* Package Title */
+.pricing-item h4 {
+  font-size: 16px !important;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Price pill */
+.pricing-item .price {
+  background: #f6d7d8;
+  border: 1px solid #e4b5b7;
+  color: #c74646;
+  padding: 4px 16px;
+  border-radius: 25px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Description Text */
+.pricing-item .desc {
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: #616161;
+  max-width: 260px;
+}
+
+/* 📱 Mobile */
+@media(max-width:768px) {
+  .pricing-grid-2 {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+  }
+}
+
+
+/* Final Pricing Adjustments */
+.pricing-section {
+  margin-top: 20px; /* reduced a bit */
+}
+
+/* Reduce vertical gap between 2 rows */
+.pricing-grid-2 {
+  row-gap: 26px;
+}
+
+/* Price Tag — slightly slimmer */
+.pricing-item .price {
+  padding: 2px 12px;   /* narrower */
+  font-weight: 500;    /* slightly lighter */
+  font-size: 13.5px;   /* match ref */
+}
+
+/* Title (About this Stay) bottom spacing fix */
+
+/* ⭐ MALNAD 8-Image Gallery FINAL STYLE */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 200px;
+  background: #e0e0e0;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* 📱 Tablet */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .gallery-item {
+    height: 180px;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .gallery-item {
+    height: 220px;
+  }
+}
+
+.section-title-main {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  margin: 32px 0 12px;
+}
+
+/* ABOUT SECTION */
+.about-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 30px 20px; /* Increased padding slightly */
+    border: 1px solid #e6e6e6;
+    box-shadow: none !important;
+    margin: 20px 0 8px; /* Reduced bottom margin to shrink card gap */
+}
+
+.about-card .section-title-main {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Styling the new About text for better readability/line height */
+.about-card .about-text {
+    font-size: 15px;
+    line-height: 1.7; 
+    color: #4a4a4a;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+/* ⭐ MALNAD STYLE – ABOUT + PRICING SAME LOOK ⭐ */
+.about-block {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: flex-start;
+    column-gap: 20px;
+    padding: 24px 10px;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 20px;
+}
+
+.about-block h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+}
+
+.about-block p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 650px;
+}
+
+/* ⭐ FULL WHITE BOX PRICING CARD ⭐ */
+.pricing-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 30px 20px;
+    border: 1px solid #e6e6e6;
+    box-shadow: none !important;
+    margin: 25px 0 20px;
+}
+
+.pricing-card .section-title-main {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Reduce gap with card layout */
+.pricing-grid-2 {
+    margin-top: 10px;
+}
+
+/* ⭐ ACCOMMODATION — TEXT ONLY STYLE (as requested) */
+
+.accommodation-block {
+    margin: 35px 0;
+}
+
+.acc-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px; /* consistent with reference */
+    text-align: left;
+}
+
+
+.acc-text-box h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #000;
+}
+
+.acc-text-box p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+
+
+
+
+.section-heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #000;
+}
+
+
+.acc-icon {
+    width: 58px;
+    opacity: 0.35;
+}
+
+
+
+.acc-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.acc-item p {
+    font-size: 14px;
+    color: #4b4b4b;
+    margin-bottom: 4px;
+}
+
+
+
+
+/* Title */
+.acc-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+
+
+/* Individual card */
+.acc-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.acc-item p {
+    font-size: 14px;
+    margin: 2px 0;
+    color: #505050;
+}
+
+/* Bed icon style */
+.acc-icon {
+    margin-bottom: 6px;
+}
+
+.acc-icon i {
+    font-size: 42px;
+    color: #c9ced5;  /* soft-grey professional look */
+}
+
+
+
+/* ACCOMMODATION */
+.accommodation-block {
+    padding: 40px 10px;
+    font-family: "Inter", sans-serif;
+}
+
+.acc-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #3b4249; /* theme text color */
+    margin-bottom: 32px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 10px;
+}
+
+
+
+
+.acc-icon {
+    font-size: 42px;
+    color: #c2c7ce; /* Theme neutral icon shade */
+    margin-bottom: 10px;
+}
+
+.acc-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #3b4249;
+    margin-bottom: 6px;
+}
+
+.acc-line {
+    font-size: 14px;
+    line-height: 22px;
+    color: #596167;
+    margin: 0;
+}
+
+
+
+
+
+/* =========================================
+   PRICING SECTION - REFERENCE MATCH
+   ========================================= */
+
+.pricing-container {
+    display: flex; /* Creates the Left Label / Right Grid layout */
+    padding: 30px 0;
+    border-top: 1px solid #eaeaea; /* Light divider line like reference */
+    margin-top: 20px;
+    background: #fff;
+}
+
+/* Left Column: "Pricing" Label */
+.pricing-label {
+    width: 20%; /* Takes up roughly 1/5th of the width */
+    padding-right: 20px;
+}
+
+.pricing-label h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin: 0;
+}
+
+/* Right Column: The Grid */
+.pricing-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Columns */
+    column-gap: 40px; /* Space between columns */
+    row-gap: 30px;    /* Space between rows */
+}
+
+/* Individual Item Styling */
+.pricing-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 1. Strike Through Price (Small, top) */
+.strike-price {
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: line-through;
+    color: #333; /* Darker black/gray like reference */
+    margin-bottom: 2px;
+}
+
+/* 2. Package Name + Price Box Row */
+.package-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.pkg-name {
+    font-size: 15px;
+    font-weight: 600; /* Semi-bold */
+    color: #222;
+}
+
+/* THE PRICE BOX (Reference Style) */
+.price-box {
+    border: 1px solid #dcdcdc; /* Light gray border */
+    background-color: #ffffff; /* White background */
+    color: #333;               /* Dark text */
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;        /* Slightly rounded corners */
+}
+
+/* 3. Description Text */
+.pkg-desc {
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 90%;
+}
+
+/* RESPONSIVE: Stack on Mobile */
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column;
+    }
+    
+    .pricing-label {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .pricing-grid {
+        width: 100%;
+        gap: 25px;
+    }
+}
+
+/* ================================
+   CLEANED: ACCOMMODATION (single source)
+   Paste once (replace older acc-* rules)
+   ================================ */
+
+.accommodation-block {
+  margin: 35px 0;
+  padding: 10px 0 18px;
+  font-family: "Inter", sans-serif;
+}
+
+.acc-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6; /* subtle divider */
+  text-align: left;
+}
+
+/* Outer wrapper that aligns columns inside the white card */
+
+
+
+
+/* precise icon color/size to match reference */
+.acc-icon {
+  display: inline-block;
+  width: 56px;           /* width of SVG */
+  height: 40px;          /* height used for vertical rhythm */
+  color: #909294;        /* match reference's neutral grey */
+  opacity: 0.75;         /* final pale appearance */
+  margin-bottom: 12px;   /* spacing below icon */
+  transform: translateY(2px); /* subtle vertical nudge */
+}
+
+
+/* title and lines */
+.acc-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+.acc-line {
+  font-size: 14px;
+  color: #51555a;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+
+
+
+/* -------- FEATURES / AMENITIES (Malnad-like) -------- */
+.features-section {
+  display: flex;
+  gap: 28px;
+  padding: 28px 0 18px;
+  align-items: flex-start;
+}
+
+/* left label column */
+.features-label {
+  width: 18%;
+  min-width: 140px;
+  padding-right: 18px;
+}
+
+.features-label h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e6e6e6;
+  color: #0f1724;
+}
+
+/* right content area (two columns that each contain two blocks) */
+.features-grid {
+  width: 82%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 44px; /* row gap 28, column gap 44 */
+  align-items: start;
+}
+
+/* individual block (heading + list) */
+.feature-block h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+/* lists */
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* chevron icon inserted inline as SVG, styled by this rule */
+.feature-list .chev {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  color: #c7ccd1; /* neutral pale grey */
+  opacity: 0.9;
+  transform: translateY(1px);
+}
+
+/* subtle vertical rhythm: reduce padding for last item in a block */
+.feature-block .feature-list li:last-child {
+  padding-bottom: 0;
+}
+
+/* Responsive: stack for narrow screens */
+@media (max-width: 900px) {
+  .features-section {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .features-label {
+    width: 100%;
+    padding-right: 0;
+  }
+  .features-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .feature-block h4 { margin-bottom: 10px; }
+}
+
+/* ===== CLEAN TERMS & RULES (single-source styles) ===== */
+
+.terms-section { display:flex; gap:28px; padding:32px 0; align-items:flex-start; }
+.terms-label { width:18%; min-width:140px; padding-right:18px; }
+.terms-label h3 { font-size:20px; font-weight:700; margin:0; padding-bottom:6px; border-bottom:1px solid #e6e6e6; color:#111827; }
+
+.terms-content { width:82%; }
+
+.terms-table { list-style:none; margin:0 0 18px; padding:0; }
+.terms-table > li {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding:12px 0;
+  color:#374151;
+  font-size:15px;
+}
+
+/* left area (icon + label) */
+.term-left { display:flex; align-items:center; gap:14px; min-width:0; }
+
+/* inline SVG icon defaults (use currentColor) */
+.term-icon { width:18px; height:18px; flex:0 0 18px; display:inline-block; fill:currentColor; }
+
+/* colors for icons */
+.term-icon.term-check { color: var(--primary, #0b7c6b); }
+.term-icon.term-cross { color: #9b9b9b; }
+
+/* label text */
+.term-text { color:#374151; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* right column values */
+.term-right { color:#111827; font-size:15px; white-space:nowrap; margin-left:12px; text-align:right; min-width:120px; }
+.term-right strong { font-weight:700; }
+
+/* cancellation policy */
+.cancellation { margin-top:18px; padding-top:8px; }
+.cancellation h4 { font-size:16px; font-weight:700; margin:0 0 14px; color:#111827; }
+.cancellation p { font-size:14.5px; color:#555; line-height:1.8; margin:14px 0; max-width:780px; }
+
+/* responsive */
+@media (max-width:900px) {
+  .terms-section { flex-direction:column; gap:18px; }
+  .terms-label { width:100%; padding-right:0; }
+  .terms-content { width:100%; }
+  .terms-table > li { flex-direction:row; justify-content:space-between; padding:10px 0; }
+  .term-right { min-width:0; margin-left:8px; text-align:left; }
+}
+
+/* =========================
+   QUICK FIX — TERMS & RULES
+   Drop this at the END of suggee.css
+   ========================= */
+
+/* Scope strongly to the card area to avoid collision with other pages */
+.stay-card-wrapper .terms-section,
+.terms-section {
+  display: flex !important;
+  gap: 28px !important;
+  padding: 32px 0 !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep label column flush and same size as reference */
+.stay-card-wrapper .terms-label,
+.terms-label {
+  width: 18% !important;
+  min-width: 140px !important;
+  padding-right: 18px !important;
+  box-sizing: border-box !important;
+}
+
+/* Heading style */
+.stay-card-wrapper .terms-label h3,
+.terms-label h3 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  padding-bottom: 6px !important;
+  border-bottom: 1px solid #e6e6e6 !important;
+  color: #111827 !important;
+}
+
+/* Content column */
+.stay-card-wrapper .terms-content,
+.terms-content {
+  width: 82% !important;
+  box-sizing: border-box !important;
+}
+
+/* Row style: left(group) + right(value) */
+.stay-card-wrapper .terms-table > li,
+.terms-table > li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  padding: 12px 0 !important;
+  font-size: 15px !important;
+  color: #374151 !important;
+}
+
+/* left group (icon + label) must take flexible space so the right column stays aligned */
+.stay-card-wrapper .term-left,
+.terms-section .term-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+/* Force SVG / inline icons to use currentColor and fixed size */
+.stay-card-wrapper .term-icon,
+.terms-section .term-icon,
+svg.term-icon {
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 18px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  fill: currentColor !important;
+  stroke: none !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Explicit colors */
+.terms-section svg.term-icon.term-check,
+.terms-section .term-icon.term-check {
+  color: var(--primary, #0b7c6b) !important;
+  fill: var(--primary, #0b7c6b) !important;
+}
+
+.terms-section svg.term-icon.term-cross,
+.terms-section .term-icon.term-cross {
+  color: #9b9b9b !important;
+  fill: #9b9b9b !important;
+}
+
+/* label text - single line and ellipsis if long */
+.stay-card-wrapper .term-text,
+.terms-section .term-text {
+  color: #374151 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin: 0 !important;
+  font-size: 15px !important;
+}
+
+/* RIGHT column: fixed slot so all values align vertically */
+.stay-card-wrapper .term-right,
+.terms-section .term-right {
+  flex: 0 0 180px !important;    /* fixed width column on desktop */
+  text-align: right !important;
+  font-size: 15px !important;
+  color: #111827 !important;
+  min-width: 120px !important;
+  margin-left: 12px !important;
+}
+
+/* Make times bold like the reference */
+.stay-card-wrapper .term-right strong,
+.terms-section .term-right strong {
+  font-weight: 700 !important;
+}
+
+/* Cancellation policy copy */
+.stay-card-wrapper .cancellation,
+.terms-section .cancellation {
+  margin-top: 18px !important;
+  padding-top: 8px !important;
+}
+.stay-card-wrapper .cancellation h4,
+.terms-section .cancellation h4 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin: 0 0 14px !important;
+}
+.stay-card-wrapper .cancellation p,
+.terms-section .cancellation p {
+  font-size: 14.5px !important;
+  color: #555 !important;
+  line-height: 1.8 !important;
+  margin: 14px 0 !important;
+  max-width: 780px !important;
+}
+
+/* Responsive: on narrow screens stack label + content and allow values to wrap under the left label */
+@media (max-width: 900px) {
+  .stay-card-wrapper .terms-section,
+  .terms-section {
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+  .stay-card-wrapper .terms-label,
+  .terms-label { width: 100% !important; padding-right: 0 !important; }
+  .stay-card-wrapper .terms-content,
+  .terms-content { width: 100% !important; }
+
+  /* make right column auto so it flows naturally */
+  .stay-card-wrapper .term-right,
+  .terms-section .term-right {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    text-align: left !important;
+    margin-left: 8px !important;
+  }
+  .stay-card-wrapper .terms-table > li,
+  .terms-table > li {
+    padding: 10px 0 !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+}
+/* ========== MICRO-FIX: force TIME cell alignment & nowrap ========== */
+/* Put this at the VERY END of suggee.css */
+
+.terms-section .term-right {
+  /* push the value to the far right column and stop it from wrapping */
+  margin-left: auto !important;
+  text-align: right !important;
+  white-space: nowrap !important;   /* keep 12:00PM - 11:00AM on one line */
+  overflow: visible !important;
+  flex: 0 0 180px !important;       /* keep fixed column width on desktop */
+  min-width: 120px !important;
+}
+
+/* ensure the time itself is bold but doesn't get extra inline effects */
+.terms-section .term-right strong {
+  font-weight: 700 !important;
+  display: inline-block;           /* keeps spacing consistent */
+  white-space: nowrap !important;
+}
+
+/* Mobile: let the right value wrap under the label (stack nicely) */
+@media (max-width: 900px) {
+  .terms-section .term-right {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    margin-left: 8px !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+  .terms-section .term-right strong {
+    white-space: normal !important;
+  }
+}
+
+
+
+
+
+/* =========================
+   PRIORITY FIXES TO MATCH MALNADSTAYS
+   Paste at the end of suggee.css
+   ========================= */
+
+/* 1) TERMS ROW: force label + value on one line (fixes the 12:00PM - 11:00AM wrap) */
+.terms-table > li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  padding: 12px 0 !important;
+  flex-wrap: nowrap;               /* keep everything in one line */
+  box-sizing: border-box;
+}
+.term-left { min-width: 0; display:flex; align-items:center; gap:14px; }
+.term-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 180px);   /* reserve space for right column */
+  font-size: 15px;
+  color: #374151;
+}
+.term-right {
+  flex: 0 0 180px;                  /* fixed width so value never wraps */
+  text-align: right;
+  white-space: nowrap;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* smaller screens: allow safe stacking (so it stays readable) */
+@media (max-width: 520px) {
+  .terms-table > li { flex-direction: column; align-items: flex-start; }
+  .term-right { text-align: left; flex: 0 0 auto; margin-top: 8px; }
+  .term-text { max-width: 100%; }
+}
+
+/* 2) Icons (acc-specs) darker and crisper to match reference */
+.acc-icon,
+.spec-icon {
+  color: #5a5f63 !important;  /* darker neutral grey like reference */
+  opacity: 0.85 !important;
+  width: 56px; height: 40px;
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+/* 3) Typography tweaks — closer to reference sizing/weights */
+.property-title { font-size: 28px; font-weight: 700; color: #111827; }
+.section-title-main, .acc-heading { font-size: 18px; font-weight: 600; }
+.pricing-label h3 { font-size: 18px; font-weight: 700; }
+
+/* 4) Price pill (pricing) — match ref style */
+.price-box,
+.pricing-item .price {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-block;
+  box-shadow: none;
+}
+
+/* 5) Enquiry card tweak — dark bar at top like reference */
+.enquiry-card {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 12px;
+}
+.enquiry-card > .enquire-top {
+  background: #2f2f2f; color: #fff;
+  padding: 16px; border-radius: 8px 8px 0 0;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.enquiry-card .price-note { color: #fff; margin:0; font-weight:700; }
+.enquiry-card .enquiry-form { padding: 18px; background:#fff; border-radius:0 0 8px 8px; }
+
+/* 6) Gallery grid: tighter gap & larger thumbnails like reference */
+.gallery-grid { gap: 12px; margin: 24px 0; }
+.gallery-item { height: 160px; border-radius: 8px; overflow:hidden; }
+
+/* 7) Feature lists (chev + spacing) */
+.feature-list li { padding: 8px 0; color:#4b5563; font-size:15px; }
+.feature-list .chev { width: 14px; height: 14px; color:#c7ccd1; }
+
+/* 8) Cards / shadows: use subtle card shadow same as reference */
+.stay-card-wrapper,
+.stay-card,
+.pricing-card {
+  box-shadow: 0 4px 18px rgba(6,6,6,0.04);
+  border-radius: 12px;
+}
+
+/* 9) Slight color palette tweak to match reference's green accent */
+:root { --primary: #0b7c6b; --accent: #ff7a00; }
+
+/* 10) Small responsive tune: keep right column readable on tablet */
+@media (max-width: 992px) {
+  .pricing-container, .features-section, .terms-section {
+    padding-left: 12px; padding-right: 12px;
+  }
+  .term-right { flex: 0 0 150px; }
+}
+.terms-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.terms-list li::before {
+    content: "✔";
+    color: green;
+    margin-right: 8px;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card-link:hover .stay-card {
+  transform: translateY(-4px);
+  transition: 0.3s;
+}
+/* ================================
+   ✅ HARD FIX: SIDE-BY-SIDE CARDS
+   ================================ */
+
+#stays #cards {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 5px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  padding-bottom: 20px !important;
+}
+
+#stays #cards::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ✅ DESKTOP: 3 cards */
+#stays #cards .card-link {
+  flex: 0 0 calc((100% - 32px) / 3) !important;
+  max-width: calc((100% - 32px) / 3) !important;
+  scroll-snap-align: start !important;
+  display: block !important;
+}
+
+/* ✅ TABLET: 2 cards */
+@media (max-width: 1024px) {
+  #stays #cards .card-link {
+    flex: 0 0 calc((100% - 16px) / 2) !important;
+    max-width: calc((100% - 16px) / 2) !important;
+  }
+}
+
+/* ✅ MOBILE: 1 card */
+@media (max-width: 768px) {
+  #stays #cards .card-link {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ✅ Card safety */
+#stays #cards .card {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================
+   ✅ FINAL FORCE FIX — SIDE-BY-SIDE CAROUSEL
+   ========================================== */
+
+/* 🔥 KILL GRID & FORCE FLEX */
+.grid#cards {
+  display: flex !important;
+  grid-template-columns: none !important;
+  grid-auto-flow: unset !important;
+}
+
+/* ✅ MAIN CAROUSEL */
+#cards {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 10px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  padding-bottom: 20px !important;
+}
+
+#cards::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ✅ DESKTOP — 3 CARDS */
+#cards > .card-link {
+  flex: 0 0 calc((100% - 40px) / 3) !important;
+  max-width: calc((100% - 40px) / 3) !important;
+  scroll-snap-align: start !important;
+  display: block !important;
+}
+
+/* ✅ TABLET — 2 CARDS */
+@media (max-width: 1024px) {
+  #cards > .card-link {
+    flex: 0 0 calc((100% - 20px) / 2) !important;
+    max-width: calc((100% - 20px) / 2) !important;
+  }
+}
+
+/* ✅ MOBILE — 1 CARD */
+@media (max-width: 768px) {
+  #cards > .card-link {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ✅ CARD SAFETY */
+#cards .card {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* ================================
+   ✅ SMALLER & EQUAL CARD SIZE
+   ================================ */
+
+/* ✅ DESKTOP — 4 SMALL CARDS */
+#cards > .card-link {
+  flex: 0 0 calc((100% - 60px) / 4) !important;  /* 4 cards in one row */
+  max-width: calc((100% - 60px) / 4) !important;
+  scroll-snap-align: start !important;
+}
+
+/* ✅ FIXED EQUAL HEIGHT */
+#cards .card {
+  width: 100% !important;
+  height: 360px !important;   /* ✅ same height for all */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ IMAGE SAME SIZE */
+#cards .card img {
+  height: 190px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ✅ BODY FLEX FOR EQUAL ALIGNMENT */
+#cards .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ✅ TABLET — 3 CARDS */
+@media (max-width: 1024px) {
+  #cards > .card-link {
+    flex: 0 0 calc((100% - 40px) / 3) !important;
+    max-width: calc((100% - 40px) / 3) !important;
+  }
+}
+
+/* ✅ MOBILE — 1 FULL CARD */
+@media (max-width: 768px) {
+  #cards > .card-link {
+    flex: 0 0 85% !important;   /* nice small swipe card */
+    max-width: 85% !important;
+  }
+}
+
+/* ============================================
+   ✅ MASTER OVERRIDE — KILL GRID, FORCE FLEX
+   ============================================ */
+
+/* 1️⃣ Completely disable GRID behavior */
+.grid#cards {
+  display: flex !important;
+  grid-template-columns: none !important;
+  grid-auto-flow: unset !important;
+}
+
+/* 2️⃣ Force horizontal scrolling */
+#cards {
+  flex-wrap: nowrap !important;
+  gap: 18px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  padding-bottom: 20px !important;
+}
+
+/* Hide scrollbar */
+#cards::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* 3️⃣ DESKTOP — 3 cards per view */
+#cards > .card-link {
+  flex: 0 0 calc((100% - 36px) / 3) !important;
+  max-width: calc((100% - 36px) / 3) !important;
+  scroll-snap-align: start !important;
+  display: block !important;
+}
+
+/* 4️⃣ TABLET — 2 cards */
+@media (max-width: 1024px) {
+  #cards > .card-link {
+    flex: 0 0 calc((100% - 18px) / 2) !important;
+    max-width: calc((100% - 18px) / 2) !important;
+  }
+}
+
+/* 5️⃣ MOBILE — 1 card */
+@media (max-width: 768px) {
+  #cards > .card-link {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 6️⃣ Card width safety */
+#cards .card {
+  width: 100% !important;
+}
+
+.cancel-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 28px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
+  text-align: left;
+}
+/* =========================================
+   ✅ MALNAD-STYLE MOBILE RESPONSIVENESS FIX
+   ========================================= */
+
+/* ✅ MAIN 2-COLUMN → SINGLE COLUMN */
+@media (max-width: 992px) {
+  .stay-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  .left-column {
+    order: 1;
+  }
+
+  .enquiry-card {
+    position: relative;
+    top: 0;
+    margin-top: 25px;
+    order: 2;
+  }
+}
+
+
+
+/* ✅ PROPERTY TITLE + SHARE BUTTON FIX */
+@media (max-width: 768px) {
+  .property-title {
+    font-size: 1.5rem;
+  }
+
+  .property-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .share-btn {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    margin-top: 10px;
+  }
+}
+
+/* ✅ SPECS GRID MOBILE (4 → 2 → 1) */
+@media (max-width: 900px) {
+  .stay-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stay-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-box {
+    border-right: none;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 15px;
+  }
+
+  .spec-box:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ✅ PRICING GRID MOBILE */
+@media (max-width: 768px) {
+  .pricing-container {
+    flex-direction: column;
+  }
+
+  .pricing-label {
+    margin-bottom: 15px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .package-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* ✅ GALLERY MOBILE FIX */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+}
+
+/* ✅ ACCOMMODATION MOBILE */
+
+
+/* ✅ FEATURES GRID MOBILE (4 → 2 → 1) */
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ TERMS + CANCELLATION MOBILE */
+@media (max-width: 768px) {
+  .terms-section {
+    padding: 15px 0;
+  }
+
+  .terms-label h3 {
+    font-size: 18px;
+  }
+
+  .terms-content p,
+  .terms-list li {
+    font-size: 14px;
+  }
+}
+
+/* ✅ SIMILAR STAYS MOBILE — 1 CARD SCROLL */
+@media (max-width: 768px) {
+  #cards .card-link {
+    flex: 0 0 85% !important;
+  }
+
+  .carousel-buttons {
+    display: none;
+  }
+}
+
+/* ✅ HEADER MOBILE FIX */
+@media (max-width: 992px) {
+  .main-menu {
+    display: none !important;
+  }
+
+  .mobile_menu {
+    display: block !important;
+  }
+
+  .book_room {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+/* 12/12/25 */
+
+/* ============================
+   ⭐ GLOBAL MOBILE FIXES
+=============================== */
+@media (max-width: 768px) {
+
+    /* Container */
+    .container, .page {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Two-column layout → single column */
+    .stay-main {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* Enquiry card moves below content */
+    .enquiry-card {
+        position: relative;
+        top: 0;
+        margin-top: 20px;
+    }
+
+    /* Property title & meta */
+    .property-title {
+        font-size: 1.4rem !important;
+    }
+
+    .property-meta {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Share button fix */
+    .share-btn {
+        right: 0;
+        top: -10px;
+        transform: scale(.9);
+    }
+
+    /* Specs grid → 2 columns */
+    .stay-specs {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 16px 0;
+    }
+
+    .spec-box {
+        border-right: none !important;
+        padding: 10px 0;
+    }
+
+    /* About section spacing */
+    .about-card {
+        padding: 18px 14px;
+    }
+
+    /* Pricing layout → single column */
+    .pricing-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pricing-label {
+        width: 100% !important;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px;
+    }
+
+    /* Gallery 4×2 → 1 column */
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    .gallery-item {
+        height: 220px !important;
+    }
+
+    /* Accommodation grid */
+    
+
+
+    /* Features grid (4 columns → 1 column) */
+    .features-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* Terms text spacing */
+    .terms-content {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* ============================
+   ⭐ TABLET FIXES
+=============================== */
+@media (max-width: 1024px) {
+
+    .stay-main {
+        grid-template-columns: 1fr 300px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILE: show only first image inside each hero-slide (no HTML/JS changes) */
+
+
+
+
+/* ===========================
+   MOBILE — TIGHT 2-COLUMN GALLERY
+   Paste at the very end of css/suggee.css
+   (Only applies <= 768px, desktop unchanged)
+   =========================== */
+@media (max-width: 768px) {
+
+  /* make the gallery area use the content width without big gutters */
+  .gallery-wrapper,
+  .gallery-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2 columns, tiles flush together like reference */
+  .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: 120px;    /* base tile height (tweak below) */
+    gap: 4px !important;      /* tiny gutter like reference */
+    align-items: stretch;
+  }
+
+  /* ensure gallery items fit inside grid and do not overflow */
+  .gallery-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+    min-height: 0 !important; /* prevents overflow clipping bugs */
+    height: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important; /* remove heavy shadow for clean tile look */
+    border-radius: 0 !important; /* remove rounded corners like reference */
+  }
+
+  /* images fill their tile and are cropped cleanly */
+  .gallery-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    vertical-align: middle !important;
+  }
+
+  /* small tweak: if you have a top-left logo, keep it positioned but on mobile use smaller margin */
+  .gallery-logo {
+    display: block;
+    max-width: 160px;
+    margin: 6px 8px;
+  }
+
+  /* make sure the gallery fully occupies its layout so next sections don't overlap */
+  .gallery-grid { align-content: start !important; }
+
+  /* add breathing room below gallery so following section never overlaps */
+  .gallery-wrapper + * {
+    margin-top: 12px !important;
+  }
+
+  /* OPTIONAL: make a few tiles taller (mimic more dynamic collage)
+     Uncomment / edit the rules below to make specific tiles span 2 rows.
+     e.g. to make first and fourth items taller:
+  */
+  /* .gallery-grid .gallery-item:nth-child(1) { grid-row: span 2; } */
+  /* .gallery-grid .gallery-item:nth-child(4) { grid-row: span 2; } */
+
+  /* To increase tile height globally, change grid-auto-rows, e.g. 140px or 160px */
+  /* .gallery-grid { grid-auto-rows: 140px; } */
+}
+
+
+
+
+
+/* =========================================
+   REMOVE SIDE GAPS – MALNAD STYLE (MOBILE)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Kill Bootstrap container padding */
+  .container,
+  .stay-main.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Remove page side gaps */
+  .stay-main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* Make main white card FULL WIDTH */
+  .stay-card-wrapper {
+    border-radius: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Accommodation section should align edge-to-edge */
+  .accommodation-block {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+
+
+/* =========================================
+   🔥 FULL EDGE-TO-EDGE FIX (MOBILE ONLY)
+   FIXES RIGHT GAP 100%
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Kill ALL container padding */
+  body,
+  .page,
+  .stay-main,
+  .stay-main.container,
+  .container,
+  .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    overflow-x: hidden;
+  }
+
+  /* Neutralize Bootstrap row negative margins */
+  .row,
+  .row.no-gutters {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Force left column full width */
+  .left-column {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+  }
+
+  /* Main white card */
+  .stay-card-wrapper {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-shadow: none !important;
+  }
+
+  /* Prevent hidden overflow causing right gap */
+  html {
+    overflow-x: hidden;
+  }
+}
+
+
+
+
+/* =================================================
+   MALNADSTAYS MOBILE FIX — POST HEADER ONLY
+   Desktop untouched
+   ================================================= */
+
+@media (max-width: 768px) {
+
+  /* =====================
+     HERO (after header)
+     ===================== */
+
+  .hero-carousel,
+  .hero-track-wrapper,
+  .hero-track {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Force hero slides to behave as single image */
+  .hero-slide {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide all images except first */
+  .hero-slide img {
+    display: none !important;
+  }
+
+  .hero-slide img:first-of-type {
+    display: block !important;
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+  }
+
+  /* =====================
+     MAIN CONTENT CARD
+     ===================== */
+
+  .stay-main {
+    margin: 0 !important;
+    padding: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .stay-card-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+}
+
+
+
+/* =========================================
+   🔥 MALNAD PRICING — MOBILE FIX ONLY
+   Starts from "Pricing" section
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Pricing container */
+  .pricing-section,
+  .pricing-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Force 2-column grid like reference */
+  .pricing-grid,
+  .pricing-grid-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 18px !important;
+  }
+
+  /* Each pricing item */
+  .pricing-item {
+    margin: 0 !important;
+  }
+
+  /* Strike price */
+  .pricing-item .strike,
+  .strike-price {
+    font-size: 12px !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Package title + price INLINE */
+  .pricing-item h4,
+  .package-row {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    font-size: 14px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Price pill — match Malnad */
+  .pricing-item .price,
+  .price-box {
+    padding: 2px 10px !important;
+    font-size: 12.5px !important;
+    border-radius: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Description text */
+  .pricing-item .desc,
+  .pkg-desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .pricing-item {
+    min-height: 100%;
+  }
+}
+
+
+/* Accommodation icon – exact Malnad tone */
+.acc-icon i,
+.acc-icon svg {
+  font-size: 38px !important;     /* slightly smaller */
+  color: #c7ccd1 !important;      /* softer grey */
+  opacity: 1 !important;
+  margin-bottom: 12px;
+}
+
+
+
+
+
+.acc-title {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 6px;
+}
+
+.acc-line {
+  font-size: 14px !important;
+  color: #6b7280 !important;
+  line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+
+  .acc-icon i,
+  .acc-icon svg {
+    font-size: 36px !important;
+  }
+}
+
+
+
+
+/* =================================================
+   🔥 FINAL ACCOMMODATION FIX — MOBILE FIRST
+   Overrides ALL previous acc-* rules
+   ================================================= */
+
+@media (max-width: 768px) {
+
+  
+
+  /* Title */
+  .acc-heading,
+  .acc-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    margin-bottom: 18px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    text-align: left !important;
+  }
+
+  /* Force SINGLE clean layout system */
+  
+
+  
+
+  /* FontAwesome bed icon — THIS is the real icon */
+  .acc-icon i {
+    font-size: 36px !important;
+    color: #c7ccd1 !important;
+    margin-bottom: 10px !important;
+    display: inline-block !important;
+  }
+
+  /* Title text */
+  .acc-col h4,
+  .acc-item h4 {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px !important;
+    color: #111827 !important;
+  }
+
+  /* Detail lines */
+  .acc-col p,
+  .acc-item p,
+  .acc-line {
+    font-size: 14px !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   📱 FINAL MOBILE OVERRIDE — MATCH REFERENCE IMAGE
+   Desktop untouched | Header untouched
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* -------- GLOBAL WIDTH & GUTTERS -------- */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .container,
+  .stay-main,
+  .stay-main.container,
+  .page {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* -------- HERO (single image like reference) -------- */
+  .hero-slide {
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  .hero-slide img {
+    display: none !important;
+  }
+
+  .hero-slide img:first-of-type {
+    display: block !important;
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+  }
+
+  /* -------- MAIN CARD -------- */
+  .stay-main {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .stay-card-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* -------- TITLE + META -------- */
+  .property-title {
+    font-size: 1.45rem !important;
+    line-height: 1.3;
+  }
+
+  .property-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  /* -------- SHARE BUTTON -------- */
+  .share-btn {
+    position: static !important;
+    transform: none !important;
+    margin-top: 10px;
+  }
+
+  /* -------- SPECS (2×2 GRID) -------- */
+  .stay-specs {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 16px 0 !important;
+  }
+
+  .spec-box {
+    border-right: none !important;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 14px;
+  }
+
+  .spec-box:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  /* -------- GALLERY (2-COLUMN TIGHT GRID) -------- */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4px !important;
+    margin: 16px 0 !important;
+  }
+
+  .gallery-item {
+    height: 120px !important;
+    border-radius: 0 !important;
+  }
+
+  /* -------- ABOUT -------- */
+  .about-card {
+    padding: 16px !important;
+  }
+
+  /* -------- PRICING (2×2 LIKE REFERENCE) -------- */
+  .pricing-container {
+    flex-direction: column !important;
+    padding: 0 !important;
+  }
+
+  .pricing-label {
+    width: 100% !important;
+    margin-bottom: 14px;
+  }
+
+  .pricing-grid,
+  .pricing-grid-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .package-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* -------- ACCOMMODATION -------- */
+  
+
+
+  /* -------- FEATURES -------- */
+  .features-section {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  /* -------- TERMS -------- */
+  .terms-section {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .terms-label,
+  .terms-content {
+    width: 100% !important;
+  }
+
+  .term-right {
+    white-space: nowrap;
+  }
+
+  /* -------- SIMILAR STAYS -------- */
+  #cards .card-link {
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+  }
+
+  .carousel-buttons {
+    display: none;
+  }
+}
+
+
+
+/* =================================================
+   📱 SECTION FIX #1 — TITLE / META / SHARE (MOBILE)
+   Matches Malnad reference
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Breadcrumb */
+  .property-breadcrumb {
+    font-size: 13px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Header wrapper */
+  .property-header {
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+  }
+
+  /* Title */
+  .property-title {
+    font-size: 22px !important;   /* matches reference */
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Meta row (location only) */
+  .property-meta {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 14px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Hide stars + rating badge on mobile */
+  .property-stars,
+  .property-rating-text {
+    display: none !important;
+  }
+
+  /* Share button — right aligned, centered vertically */
+  .share-btn {
+    position: absolute !important;
+    right: 0 !important;
+    top: 8px !important;
+    transform: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    margin: 0 !important;
+  }
+
+}
+
+
+/* =================================================
+   📱 SECTION FIX #2 — SPECS GRID (MOBILE)
+   Matches Malnad reference
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Specs container — remove card look */
+  .stay-specs {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 12px 0 !important;
+    margin: 16px 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px 0 !important;
+  }
+
+  /* Each spec box */
+  .spec-box {
+    padding: 10px 6px !important;
+    border-right: none !important;
+    border-bottom: 1px dotted #e5e7eb !important;
+    text-align: center;
+  }
+
+  /* Remove bottom border for last row */
+  .spec-box:nth-last-child(-n+2) {
+    border-bottom: none !important;
+  }
+
+  /* Icons — lighter like reference */
+  .spec-icon {
+    width: 30px !important;
+    opacity: 0.35 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Label text */
+  .spec-title {
+    font-size: 13px !important;
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Value text */
+  .spec-value {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    white-space: nowrap;
+  }
+
+}
+
+
+/* =================================================
+   📱 MICRO FIX — BED ICON SIZE MATCH (MOBILE)
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Target only the bed icon (Font Awesome) */
+  .spec-box i.fa-bed,
+  .spec-box i.fa-hotel {
+    font-size: 26px !important;   /* slightly smaller */
+    opacity: 0.35 !important;
+    transform: translateY(2px);   /* optical alignment */
+  }
+
+  /* Keep SVG / img icons unchanged */
+  .spec-box img.spec-icon,
+  .spec-box svg.spec-icon {
+    width: 30px !important;
+    height: auto;
+  }
+
+}
+
+
+/* =================================================
+   📱 SECTION FIX #3 — ABOUT TITLE (2 DIVIDERS)
+   Exact reference behavior
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* About wrapper — no card */
+  .about-card {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 18px 0 12px !important;
+  }
+
+  /* Title between two lines */
+  .about-card .section-title-main,
+  .about-card h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+
+    padding: 10px 0 !important;
+    margin: 0 !important;
+
+    border-top: 1px solid #e5e7eb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+}
+
+
+
+/* =================================================
+   📱 SECTION FIX #4 — PRICING (MOBILE)
+   Match Malnad reference exactly
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Pricing wrapper */
+  .pricing-section,
+  .pricing-container {
+    padding: 0 !important;
+    margin-top: 18px !important;
+  }
+
+  /* Pricing title */
+  .pricing-section h3,
+  .pricing-label h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin-bottom: 14px !important;
+    color: #111827 !important;
+  }
+
+  /* FORCE 2×2 GRID */
+  .pricing-grid,
+  .pricing-grid-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px 16px !important;
+  }
+
+  /* Individual pricing block — flatten it */
+  .pricing-item {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Package title */
+  .pricing-item h4,
+  .pkg-name {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Price pill */
+  .pricing-item .price,
+  .price-box {
+    display: inline-block !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    padding: 3px 10px !important;
+    border-radius: 14px !important;
+    border: 1px solid #e5e7eb !important;
+    background: #fff !important;
+    color: #111827 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Description text — tighter & lighter */
+  .pricing-item .desc,
+  .pkg-desc {
+    font-size: 12.8px !important;
+    line-height: 1.5 !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+  }
+
+}
+
+
+/* =================================================
+   ✅ ACCOMMODATION — CLEAN & FINAL (MOBILE + DESKTOP)
+   No conflicts, no overrides
+   ================================================= */
+
+/* Desktop / default */
+.acc-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  text-align: center;
+}
+
+.acc-col {
+  flex: 0 0 33.333%;
+}
+
+.acc-icon i,
+.acc-icon svg {
+  font-size: 40px;
+  color: #c7ccd1;
+  margin-bottom: 10px;
+}
+
+.acc-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.acc-line {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* 📱 MOBILE — STILL 3 SIDE-BY-SIDE */
+@media (max-width: 768px) {
+  .acc-grid {
+    gap: 8px;
+  }
+
+  .acc-col {
+    flex: 0 0 33.333%;
+  }
+
+  .acc-icon i,
+  .acc-icon svg {
+    font-size: 28px;
+  }
+
+  .acc-title {
+    font-size: 13px;
+  }
+
+  .acc-line {
+    font-size: 12.5px;
+  }
+}
+
+
+
+
+
+/* =================================================
+   📱 FEATURES — FIX HTML STRUCTURE VISUALLY (MOBILE)
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Remove side label spacing */
+  .features-section {
+    padding: 12px 0 !important;
+  }
+
+  /* Stack everything vertically */
+  .features-grid {
+    display: block !important;
+  }
+
+  /* Remove empty heading space */
+  .feature-block h4:empty,
+  .feature-block h4:has(:not(*)) {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 🔥 MERGE lists visually */
+  .feature-block {
+    margin-bottom: 12px !important;
+  }
+
+  /* Make each UL a 2-column grid */
+  .feature-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 18px !important;
+    row-gap: 6px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Tight list items */
+  .feature-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Keep only ONE arrow (you already have > in HTML) */
+  .chev {
+    display: none !important;
+  }
+
+  /* Reduce visual arrow spacing */
+  .chev-char {
+    margin-right: 4px;
+    color: #9ca3af;
+    font-weight: 500;
+  }
+
+  /* Headings spacing */
+  .feature-block h4 {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    margin-top: 12px !important;
+    color: #111827 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 18px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .acc-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+
+  .acc-col {
+    width: 33.333% !important;
+    text-align: center;
+  }
+
+  .acc-icon i,
+  .acc-icon svg {
+    font-size: 30px !important; /* reduced */
+    margin-bottom: 6px;
+  }
+
+  .acc-title {
+    font-size: 13px !important;
+    line-height: 1.2;
+  }
+
+  .acc-line {
+    font-size: 12px !important;
+    line-height: 1.4;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px 20px !important; /* row gap, column gap */
+  }
+
+  .feature-list li {
+    padding: 6px 0 !important;
+    font-size: 14px !important;
+  }
+
+  .feature-block h4 {
+    margin-bottom: 6px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .section-heading,
+  .features-label h3 {
+    margin-bottom: 10px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14.5px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .feature-list {
+    margin-top: 6px !important;
+  }
+
+  .feature-list li {
+    padding: 5px 0 !important;
+    line-height: 1.45;
+  }
+
+  .feature-block {
+    margin-bottom: 6px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .terms-content p,
+  .cancellation p {
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer_widget {
+    margin-bottom: 20px;
+  }
+}
+/* ===============================
+   MOBILE ONLY – FEATURES FIX
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Stack feature blocks */
+  .features-grid {
+    display: block;
+  }
+
+  /* Remove fake empty headings */
+  .feature-block h4:empty {
+    display: none;
+  }
+
+  /* Make lists 2-per-row */
+  .feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    padding: 0;
+    margin-bottom: 18px;
+  }
+
+  /* Smaller text for mobile */
+  .feature-list li {
+    font-size: 13px;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Icon spacing */
+  .chev {
+    width: 12px;
+    margin-right: 6px;
+  }
+
+  /* Section spacing */
+  .feature-block {
+    margin-bottom: 20px;
+  }
+}
+/* ================= MOBILE MENU – FINAL CLEAN FIX ================= */
+@media (max-width: 992px) {
+
+  /* Hide desktop menu */
+  .main-menu {
+    display: none !important;
+  }
+
+  .mobile_menu {
+    position: relative;
+    padding: 10px 0;
+  }
+
+  /* Toggle button */
+  .mobile-toggle {
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Mobile nav */
+  .mobile-nav {
+    display: none;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+    padding: 6px 0;
+  }
+
+  .mobile-nav.open {
+    display: block;
+  }
+
+  /* FORCE VERTICAL */
+  .mobile-nav {
+    display: none;
+    flex-direction: column !important;
+  }
+
+  .mobile-nav li {
+    display: block !important;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-nav li a {
+    display: block !important;
+    padding: 8px 16px;
+    font-size: 14px;  /* smaller font */
+    color: #000;
+    border: none !important;
+  }
+
+  /* Remove desktop underline */
+  .mobile-nav li a:hover,
+  .mobile-nav li a.active {
+    border-bottom: none !important;
+  }
+
+  /* Submenu */
+  .mobile-nav .submenu {
+    display: none;
+    position: static !important;
+    background: #f8f8f8;
+    box-shadow: none;
+  }
+
+  .mobile-nav .submenu.open {
+    display: block;
+  }
+
+  .mobile-nav .submenu li a {
+    padding-left: 30px;
+    font-size: 13px;
+    color: #444;
+  }
+}
+/* ============================
+   PRICING MOBILE GAP FIX
+   ============================ */
+@media (max-width: 768px) {
+
+  .pricing-container {
+    padding: 15px 0;
+    margin-top: 10px;
+  }
+
+  .pricing-grid {
+    width: 100%;
+    row-gap: 16px;
+  }
+
+  .pricing-label {
+    margin-bottom: 12px;
+  }
+
+  .pkg-desc {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+.resort-desc {
+  max-width: 820px;
+  margin: 20px auto;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  text-align: center;        /* center looks premium for intro text */
+}
+
+/* Highlight important words */
+.resort-desc strong {
+  color: #0b7c6b;            /* resort primary color */
+  font-weight: 600;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .resort-desc {
+    font-size: 14.5px;
+    line-height: 1.6;
+    padding: 0 14px;
+  }
+}
+/* Make footer row a flex container */
+.footer .footer_top .container .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* Make each footer column flexible equal width */
+.footer .footer_widget {
+    flex: 1 !important;
+    min-width: 200px;
+}
+
+/* Remove Bootstrap widths that cause breaking */
+.footer .col-xl-3,
+.footer .col-xl-2,
+.footer .col-xl-4,
+.footer .col-lg-3,
+.footer .col-lg-2,
+.footer .col-lg-4,
+.footer .col-md-6 {
+    width: auto !important;
+    max-width: none !important;
+    flex: 1 !important;
+}
+@media(max-width: 992px){
+    .footer .footer_top .container .row {
+        flex-wrap: wrap !important;
+    }
+    .footer .footer_widget {
+        flex: 0 0 48% !important;
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 576px){
+    .footer .footer_widget {
+        flex: 0 0 100% !important;
+    }
+}
+/* Remove left gap only on the first footer column */
+.footer .footer_top .container .row > div:first-child {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+/* Footer layout custom widths */
+.footer .footer_top .container .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Address */
+.footer .footer_top .container .row > div:nth-child(1) {
+    flex: 0.8;
+}
+
+/* Reservation */
+.footer .footer_top .container .row > div:nth-child(2) {
+    flex: 0.8;
+}
+
+/* Navigation */
+.footer .footer_top .container .row > div:nth-child(3) {
+    flex: 1.2;
+}
+
+/* Resources */
+.footer .footer_top .container .row > div:nth-child(4) {
+    flex: 3;
+}
+
+/* Newsletter */
+.footer .footer_top .container .row > div:nth-child(5) {
+    flex: 2;
+}
+=======
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f7f7f7;
+  --bg-card: #ffffff;
+  --primary: #0b7c6b;
+  --primary-soft: #e6f3f1;
+  --accent: #f7941d;
+  --text: #222;
+  --muted: #666;
+  --border: #e0e0e0;
+  --radius-lg: 16px;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --transition: 0.25s ease;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* HEADER WRAPPER */
+header {
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+}
+
+/* MAIN HEADER AREA */
+.main-header-area {
+    padding: 20px 40px;
+    position: relative;
+}
+
+/* Make the row behave like a proper 3-part layout:
+   [CENTERED MENU]       [RIGHT ICONS + BUTTON]
+*/
+.header-area .row.align-items-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LEFT COLUMN – center menu inside this column */
+.col-xl-6.col-lg-6 {
+    display: flex;
+    justify-content: center;
+}
+
+/* NAV MENU UL */
+.main-menu nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;                 /* equal spacing between items */
+    list-style: none;
+}
+
+/* NAV ITEMS */
+#navigation li {
+    list-style: none;
+    position: relative;
+}
+
+#navigation li a {
+    color: #000;               /* TEXT BLACK */
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Underline effect */
+#navigation li a:hover,
+#navigation li a.active {
+    border-bottom: 2px solid #000;
+}
+
+/* SUBMENU DROPDOWNS */
+.submenu {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #ffffff;
+    padding: 10px 0;
+    width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+    z-index: 9999;
+}
+
+#navigation li:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 35px;
+}
+
+.submenu li {
+    margin: 0;
+    padding: 0;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #000 !important;
+    border: none;
+}
+
+.submenu li a:hover {
+    background: #f2f2f2;
+}
+
+/* RIGHT SIDE – ICONS + BUTTON */
+.book_room {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* SOCIAL ICONS WRAPPER */
+.socail_links ul {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socail_links ul li a {
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul li a i {
+    font-size: 22px;
+    color: #000;               /* ICONS BLACK & VISIBLE */
+    transition: 0.2s;
+}
+
+.socail_links ul li a i:hover {
+    color: #ff7900;
+}
+
+/* BUTTON */
+.book_btn a {
+    background: #ff7e00;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff !important;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.book_btn a:hover {
+    background: #ff9100;
+}
+
+/* MOBILE MENU – simplified */
+.mobile_menu {
+    display: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+
+    .main-menu {
+        display: none !important;
+    }
+
+    .mobile_menu {
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    
+
+    .book_room {
+        justify-content: center !important;
+        margin-top: 15px;
+    }
+}
+@media (max-width: 767px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+  header {
+    position: relative;
+  }
+
+  .main-header-area {
+    padding: 15px 20px;
+  }
+
+  .book_room {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  .search-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .search-input {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-input button {
+    width: 100%;
+  }
+}
+/* ===============================
+   FOOTER
+================================= */
+.footer {
+    background: #000;
+    color: #bdbdbd;
+    font-family: 'Inter', sans-serif;
+}
+
+/* TOP SECTION */
+.footer_top {
+    padding: 80px 0 60px;
+}
+
+.footer_widget {
+    margin-bottom: 30px;
+}
+
+.footer_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+/* TEXT */
+.footer_text {
+    font-size: 15px;
+    line-height: 28px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+/* GET DIRECTION BUTTON */
+.line-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.line-button:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+/* NAVIGATION LIST */
+.footer_widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_widget ul li {
+    margin-bottom: 12px;
+}
+
+.footer_widget ul li a {
+    color: #bdbdbd;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer_widget ul li a:hover {
+    color: #ff7a00;
+}
+
+/* NEWSLETTER */
+.newsletter_form {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.newsletter_form input {
+    flex: 1;
+    height: 45px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.newsletter_form button {
+    height: 45px;
+    padding: 0 28px;
+    background: #009dff;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter_form button:hover {
+    background: #007edb;
+}
+
+.newsletter_text {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+/* ===============================
+   COPYRIGHT SECTION
+================================= */
+.copy-right_text {
+    padding: 25px 0;
+}
+
+.footer_border {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 25px;
+}
+
+.copy_right {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.copy_right a {
+    color: #009dff;
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.socail_links ul li a {
+    font-size: 18px;
+    color: #bdbdbd;
+    transition: 0.3s;
+}
+
+.socail_links ul li a:hover {
+    color: #ff7a00;
+}
+/* Container */
+
+.container {
+  width: min(1120px, 100% - 32px);
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 16px 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.breadcrumb .current {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Header section */
+
+.stay-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 16px 0 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.stay-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.stay-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.location {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #fff4e5;
+  color: #b97312;
+  border: 1px solid #ffd9a3;
+}
+
+.stay-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  max-width: 420px;
+  max-width: 100% !important;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.spec-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Header right */
+
+.stay-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.share-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.share-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.icon-btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 0.75rem;
+  padding: 6px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.icon-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Main two-column layout */
+
+.stay-main {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 28px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+/* Gallery */
+
+.gallery {
+  margin-bottom: 24px;
+}
+
+.gallery-main {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #e6e6e6;
+  box-shadow: var(--shadow-soft);
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 340px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Show grey placeholder if src is empty */
+img[src=""] {
+  background: #dcdcdc;
+}
+
+/* Thumbnails */
+
+.gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.thumb {
+  flex: 1;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100px;
+  display: block;
+  object-fit: cover;
+}
+
+.thumb.active,
+.thumb:hover {
+  border-color: var(--primary);
+}
+
+/* Section blocks */
+
+.section-block {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 16px;
+}
+
+.section-block h2,
+.section-block h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.section-block h4 {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+
+/* Chips (Amenities/Activities) */
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  margin-top: 6px;
+}
+
+.chip {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fafafa;
+}
+
+/* Nearby & Terms */
+
+.nearby-list,
+.terms-list {
+  list-style: none;
+  margin-top: 6px;
+}
+
+.nearby-list li,
+.terms-list li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+/* Enquiry card (aside) */
+
+.enquiry-card {
+  position: sticky;
+  top: 16px;
+  align-self: flex-start;
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 18px 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.enquiry-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.price-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.price-note span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-soft);
+}
+
+/* Form */
+
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.enquiry-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: var(--muted);
+  gap: 3px;
+}
+
+.enquiry-form input {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 7px 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.enquiry-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px rgba(11, 124, 107, 0.15);
+}
+
+.stays-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.carousel-buttons button {
+  border: none;
+  background: #000;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Carousel container */
+.carousel {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+/* Hide scrollbar */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* ✅ 3 cards per slide (DESKTOP) */
+.carousel .card-link {
+  flex: 0 0 calc((100% - 20px) / 3); /* 3 cards */
+  scroll-snap-align: start;
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+
+
+/* Force FLEX layout and gap only for this section */
+/* ================================
+   ✅ FINAL SIDE-BY-SIDE CAROUSEL FIX
+   ================================ */
+
+#stays {
+  margin-top: 30px;
+}
+
+#cards {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+  scrollbar-width: none;
+}
+
+#cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* ✅ 3 CARDS PER VIEW — DESKTOP */
+#cards .card-link {
+  flex: 0 0 calc((100% - 32px) / 3); /* 3 cards */
+  scroll-snap-align: start;
+  text-decoration: none;
+}
+
+/* ✅ Card height & hover */
+#cards .card {
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+#cards .card:hover {
+  transform: translateY(-6px);
+}
+
+/* ✅ TABLET — 2 CARDS */
+@media (max-width: 1024px) {
+  #cards .card-link {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+
+/* ✅ MOBILE — 1 CARD */
+@media (max-width: 768px) {
+  #cards .card-link {
+    flex: 0 0 100%;
+  }
+}
+
+
+/* ----- CAROUSEL ----- */
+
+.hero-carousel {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.hero-track-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* ✅ EQUAL WIDTH + HEIGHT */
+.hero-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ equal width */
+  gap: 3px;
+  padding: 0 12px;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 450px;       /* ✅ equal height */
+  object-fit: cover;  /* ✅ crop uniformly */
+  border-radius: 0px;
+  background: #ccc;
+}
+
+/* arrows */
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  font-size: 28px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.hero-nav.prev { left: 15px; }
+.hero-nav.next { right: 15px; }
+
+.hero-nav:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* mobile */
+/* ================================
+   HERO CAROUSEL — MOBILE FIX
+   ONE IMAGE PER SWIPE
+   ================================ */
+
+
+/* HEADER WRAPPER */
+header {
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+}
+
+/* MAIN HEADER AREA */
+.main-header-area {
+    padding: 20px 40px;
+    position: relative;
+}
+
+/* Make the row behave like a proper 3-part layout:
+   [CENTERED MENU]       [RIGHT ICONS + BUTTON]
+*/
+.header-area .row.align-items-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LEFT COLUMN – center menu inside this column */
+.col-xl-6.col-lg-6 {
+    display: flex;
+    justify-content: center;
+}
+
+/* NAV MENU UL */
+.main-menu nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;                 /* equal spacing between items */
+    list-style: none;
+}
+
+/* NAV ITEMS */
+#navigation li {
+    list-style: none;
+    position: relative;
+}
+
+#navigation li a {
+    color: #000;               /* TEXT BLACK */
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Underline effect */
+#navigation li a:hover,
+#navigation li a.active {
+    border-bottom: 2px solid #000;
+}
+
+/* SUBMENU DROPDOWNS */
+.submenu {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: #ffffff;
+    padding: 10px 0;
+    width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+    z-index: 9999;
+    display: block;
+}
+
+#navigation li:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 35px;
+}
+
+.submenu li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #000 !important;
+    border: none;
+    width: 100%;
+}
+
+.submenu li a:hover {
+    background: #f2f2f2;
+}
+
+/* RIGHT SIDE – ICONS + BUTTON */
+.book_room {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* SOCIAL ICONS WRAPPER */
+.socail_links ul {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socail_links ul li a {
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul li a i {
+    font-size: 22px;
+    color: #000;               /* ICONS BLACK & VISIBLE */
+    transition: 0.2s;
+}
+
+.socail_links ul li a i:hover {
+    color: #ff7900;
+}
+
+/* BUTTON */
+.book_btn a {
+    background: #ff7e00;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff !important;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.book_btn a:hover {
+    background: #ff9100;
+}
+
+/* MOBILE MENU – simplified */
+.mobile_menu {
+    display: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+
+    .main-menu {
+        display: none !important;
+    }
+
+    .mobile_menu {
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    
+
+    .book_room {
+        justify-content: center !important;
+        margin-top: 15px;
+    }
+}
+@media (max-width: 767px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+  header {
+    position: relative;
+  }
+
+  .main-header-area {
+    padding: 15px 20px;
+  }
+
+  .book_room {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  .search-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .search-input {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-input button {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card-link {
+    min-width: 90%;
+    scroll-snap-align: start;
+      margin: 0 !important; 
+  }
+
+  #cards::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.footer {
+    background: #000;
+    color: #bdbdbd;
+    font-family: 'Inter', sans-serif;
+}
+
+/* TOP SECTION */
+.footer_top {
+    padding: 80px 0 60px;
+}
+
+.footer_widget {
+    margin-bottom: 30px;
+}
+
+.footer_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+/* TEXT */
+.footer_text {
+    font-size: 15px;
+    line-height: 28px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+/* GET DIRECTION BUTTON */
+.line-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.line-button:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+/* NAVIGATION LIST */
+.footer_widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_widget ul li {
+    margin-bottom: 12px;
+}
+
+.footer_widget ul li a {
+    color: #bdbdbd;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer_widget ul li a:hover {
+    color: #ff7a00;
+}
+
+/* NEWSLETTER */
+.newsletter_form {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.newsletter_form input {
+    flex: 1;
+    height: 45px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.newsletter_form button {
+    height: 45px;
+    padding: 0 28px;
+    background: #ff7a00;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter_form button:hover {
+    background: #ff7a00;
+}
+
+.newsletter_text {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+/* ===============================
+   COPYRIGHT SECTION
+================================= */
+.copy-right_text {
+    padding: 25px 0;
+}
+
+.footer_border {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 25px;
+}
+
+.copy_right {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.copy_right a {
+    color: #009dff;
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.socail_links ul li a {
+    font-size: 18px;
+    color: #bdbdbd;
+    transition: 0.3s;
+}
+
+.socail_links ul li a:hover {
+    color: #ff7a00;
+}
+
+
+
+
+
+.stay-header {
+  margin-bottom: 25px;
+}
+
+.stay-specs {
+  max-width: 100% !important;
+}
+
+.spec-value {
+  white-space: nowrap;
+}
+
+
+/* Header bottom border like Malnad */
+.stay-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+/* Location styling */
+.stay-meta .location {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* Tag styling (Average badge) */
+.tag-average {
+  background: #ffe9c7;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #6b4b00;
+}
+
+/* Share section alignment */
+.stay-header-right {
+  text-align: right;
+}
+
+.stay-header-right .share-label {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.icon-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+
+/* ============================
+   PERFECT MALNAD SPECS STYLING
+   ============================ */
+
+/* ⭐ SPECIFICATIONS SECTION – EXACT MALNAD STYLE */
+.stay-specs {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 22px 0;
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  box-shadow: none !important;
+}
+
+/* INDIVIDUAL SPEC BOXES */
+.spec-box {
+  text-align: center;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  border-right: 1px dashed #d9d9d9;
+}
+
+.spec-box:last-child {
+  border-right: none;
+}
+
+/* ICON STYLE */
+.spec-icon {
+  width: 34px;
+  opacity: 0.50;
+  margin-bottom: 10px;
+}
+
+/* TOP LABEL */
+.spec-title {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* MAIN VALUE */
+.spec-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+}
+
+
+/* Header tweaks */
+.stay-header {
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+/* 8-Image Gallery (Malnad Format) */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 220px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.55);
+  padding: 5px 14px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(3px);
+}
+
+
+
+
+
+/* 6/12/25 */
+/* ⭐ Breadcrumb */
+.property-breadcrumb {
+  font-size: 0.9rem;
+  color: #ff7900;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.property-breadcrumb a {
+  color: #ff7900;
+  text-decoration: none;
+}
+.property-breadcrumb .current {
+  color: #555;
+}
+
+/* ⭐ Title & Meta */
+.property-header {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.property-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.property-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 1rem;
+  color: #666;
+}
+.property-location i {
+  color: #ff7900;
+  margin-right: 6px;
+}
+.property-stars {
+  color: #ffb400;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+}
+.property-rating-text {
+  font-size: 0.85rem;
+  background: #fff3f3;
+  color: #ff7900;
+  border: 1px solid #f3d1d1;
+  padding: 3px 14px;
+  border-radius: 50px;
+}
+
+
+.property-breadcrumb,
+.property-header {
+  width: 100%;
+  margin-left: 0;
+}
+
+
+
+/* ⭐ MAIN WHITE CARD FOR LEFT SECTION */
+.stay-card-wrapper {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+  margin-top: -40px;
+}
+
+/* Align breadcrumb + title properly inside card */
+.property-breadcrumb,
+.property-header {
+  width: 100%;
+  margin-left: 0;
+}
+
+
+/* Single Share Button – Right of Title */
+/* ⭐ Share Button (Floating beside title) */
+.share-btn {
+  background: #ff7900;     /* same pink shade */
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  right: -55px;            /* moved outside card layout */
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  transition: 0.25s ease;
+  z-index: 5;
+}
+
+.share-btn i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.share-btn:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: #ff7900;
+}
+
+
+/* Position Fix */
+.property-header {
+  position: relative;
+  padding-right: 70px; /* space for floating button */
+}
+
+
+.share-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+
+/* ============================
+   MALNADSTAYS PRICING EXACT STYLE
+   ============================ */
+
+/* ⭐ PERFECT MALNAD PRICING SECTION */
+/* ⭐ MALNADSTAYS PRICING EXACT STYLE — FINAL */
+
+.pricing-section {
+  margin-top: 25px;
+}
+
+.pricing-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  color: #000;
+}
+
+/* 2×2 Grid */
+.pricing-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 90px;
+  row-gap: 35px;
+}
+
+/* Block  */
+.pricing-item {
+  text-align: left;
+  line-height: 1.45;
+}
+
+/* Strike Price */
+.pricing-item .strike {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  margin-bottom: 6px;
+  width: fit-content;
+  position: relative;
+}
+
+.pricing-item .strike::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: #888;
+  top: 50%;
+  left: 0;
+}
+
+/* Package Title */
+.pricing-item h4 {
+  font-size: 16px !important;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Price pill */
+.pricing-item .price {
+  background: #f6d7d8;
+  border: 1px solid #e4b5b7;
+  color: #c74646;
+  padding: 4px 16px;
+  border-radius: 25px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Description Text */
+.pricing-item .desc {
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: #616161;
+  max-width: 260px;
+}
+
+/* 📱 Mobile */
+@media(max-width:768px) {
+  .pricing-grid-2 {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+  }
+}
+
+
+/* Final Pricing Adjustments */
+.pricing-section {
+  margin-top: 20px; /* reduced a bit */
+}
+
+/* Reduce vertical gap between 2 rows */
+.pricing-grid-2 {
+  row-gap: 26px;
+}
+
+/* Price Tag — slightly slimmer */
+.pricing-item .price {
+  padding: 2px 12px;   /* narrower */
+  font-weight: 500;    /* slightly lighter */
+  font-size: 13.5px;   /* match ref */
+}
+
+/* Title (About this Stay) bottom spacing fix */
+
+/* ⭐ MALNAD 8-Image Gallery FINAL STYLE */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 200px;
+  background: #e0e0e0;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* 📱 Tablet */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .gallery-item {
+    height: 180px;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .gallery-item {
+    height: 220px;
+  }
+}
+
+.section-title-main {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  margin: 32px 0 12px;
+}
+
+/* ABOUT SECTION */
+.about-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 30px 20px; /* Increased padding slightly */
+    border: 1px solid #e6e6e6;
+    box-shadow: none !important;
+    margin: 20px 0 8px; /* Reduced bottom margin to shrink card gap */
+}
+
+.about-card .section-title-main {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Styling the new About text for better readability/line height */
+.about-card .about-text {
+    font-size: 15px;
+    line-height: 1.7; 
+    color: #4a4a4a;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+/* ⭐ MALNAD STYLE – ABOUT + PRICING SAME LOOK ⭐ */
+.about-block {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: flex-start;
+    column-gap: 20px;
+    padding: 24px 10px;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 20px;
+}
+
+.about-block h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+}
+
+.about-block p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 650px;
+}
+
+/* ⭐ FULL WHITE BOX PRICING CARD ⭐ */
+.pricing-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 30px 20px;
+    border: 1px solid #e6e6e6;
+    box-shadow: none !important;
+    margin: 25px 0 20px;
+}
+
+.pricing-card .section-title-main {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Reduce gap with card layout */
+.pricing-grid-2 {
+    margin-top: 10px;
+}
+
+/* ⭐ ACCOMMODATION — TEXT ONLY STYLE (as requested) */
+
+.accommodation-block {
+    margin: 35px 0;
+}
+
+.acc-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px; /* consistent with reference */
+    text-align: left;
+}
+
+
+.acc-text-box h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #000;
+}
+
+.acc-text-box p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+
+
+
+
+.section-heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #000;
+}
+
+
+.acc-icon {
+    width: 58px;
+    opacity: 0.35;
+}
+
+
+
+.acc-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.acc-item p {
+    font-size: 14px;
+    color: #4b4b4b;
+    margin-bottom: 4px;
+}
+
+
+
+
+/* Title */
+.acc-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+
+
+/* Individual card */
+.acc-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.acc-item p {
+    font-size: 14px;
+    margin: 2px 0;
+    color: #505050;
+}
+
+/* Bed icon style */
+.acc-icon {
+    margin-bottom: 6px;
+}
+
+.acc-icon i {
+    font-size: 42px;
+    color: #c9ced5;  /* soft-grey professional look */
+}
+
+
+
+/* ACCOMMODATION */
+.accommodation-block {
+    padding: 40px 10px;
+    font-family: "Inter", sans-serif;
+}
+
+.acc-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #3b4249; /* theme text color */
+    margin-bottom: 32px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 10px;
+}
+
+
+
+
+.acc-icon {
+    font-size: 42px;
+    color: #c2c7ce; /* Theme neutral icon shade */
+    margin-bottom: 10px;
+}
+
+.acc-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #3b4249;
+    margin-bottom: 6px;
+}
+
+.acc-line {
+    font-size: 14px;
+    line-height: 22px;
+    color: #596167;
+    margin: 0;
+}
+
+
+
+
+
+/* =========================================
+   PRICING SECTION - REFERENCE MATCH
+   ========================================= */
+
+.pricing-container {
+    display: flex; /* Creates the Left Label / Right Grid layout */
+    padding: 30px 0;
+    border-top: 1px solid #eaeaea; /* Light divider line like reference */
+    margin-top: 20px;
+    background: #fff;
+}
+
+/* Left Column: "Pricing" Label */
+.pricing-label {
+    width: 20%; /* Takes up roughly 1/5th of the width */
+    padding-right: 20px;
+}
+
+.pricing-label h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin: 0;
+}
+
+/* Right Column: The Grid */
+.pricing-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Columns */
+    column-gap: 40px; /* Space between columns */
+    row-gap: 30px;    /* Space between rows */
+}
+
+/* Individual Item Styling */
+.pricing-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* 1. Strike Through Price (Small, top) */
+.strike-price {
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: line-through;
+    color: #333; /* Darker black/gray like reference */
+    margin-bottom: 2px;
+}
+
+/* 2. Package Name + Price Box Row */
+.package-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.pkg-name {
+    font-size: 15px;
+    font-weight: 600; /* Semi-bold */
+    color: #222;
+}
+
+/* THE PRICE BOX (Reference Style) */
+.price-box {
+    border: 1px solid #dcdcdc; /* Light gray border */
+    background-color: #ffffff; /* White background */
+    color: #333;               /* Dark text */
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;        /* Slightly rounded corners */
+}
+
+/* 3. Description Text */
+.pkg-desc {
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 90%;
+}
+
+/* RESPONSIVE: Stack on Mobile */
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column;
+    }
+    
+    .pricing-label {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .pricing-grid {
+        width: 100%;
+        gap: 25px;
+    }
+}
+
+/* ================================
+   CLEANED: ACCOMMODATION (single source)
+   Paste once (replace older acc-* rules)
+   ================================ */
+
+.accommodation-block {
+  margin: 35px 0;
+  padding: 10px 0 18px;
+  font-family: "Inter", sans-serif;
+}
+
+.acc-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6; /* subtle divider */
+  text-align: left;
+}
+
+/* Outer wrapper that aligns columns inside the white card */
+
+
+
+
+/* precise icon color/size to match reference */
+.acc-icon {
+  display: inline-block;
+  width: 56px;           /* width of SVG */
+  height: 40px;          /* height used for vertical rhythm */
+  color: #909294;        /* match reference's neutral grey */
+  opacity: 0.75;         /* final pale appearance */
+  margin-bottom: 12px;   /* spacing below icon */
+  transform: translateY(2px); /* subtle vertical nudge */
+}
+
+
+/* title and lines */
+.acc-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+.acc-line {
+  font-size: 14px;
+  color: #51555a;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+
+
+
+/* -------- FEATURES / AMENITIES (Malnad-like) -------- */
+.features-section {
+  display: flex;
+  gap: 28px;
+  padding: 28px 0 18px;
+  align-items: flex-start;
+}
+
+/* left label column */
+.features-label {
+  width: 18%;
+  min-width: 140px;
+  padding-right: 18px;
+}
+
+.features-label h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e6e6e6;
+  color: #0f1724;
+}
+
+/* right content area (two columns that each contain two blocks) */
+.features-grid {
+  width: 82%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 44px; /* row gap 28, column gap 44 */
+  align-items: start;
+}
+
+/* individual block (heading + list) */
+.feature-block h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+/* lists */
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* chevron icon inserted inline as SVG, styled by this rule */
+.feature-list .chev {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  color: #c7ccd1; /* neutral pale grey */
+  opacity: 0.9;
+  transform: translateY(1px);
+}
+
+/* subtle vertical rhythm: reduce padding for last item in a block */
+.feature-block .feature-list li:last-child {
+  padding-bottom: 0;
+}
+
+/* Responsive: stack for narrow screens */
+@media (max-width: 900px) {
+  .features-section {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .features-label {
+    width: 100%;
+    padding-right: 0;
+  }
+  .features-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .feature-block h4 { margin-bottom: 10px; }
+}
+
+/* ===== CLEAN TERMS & RULES (single-source styles) ===== */
+
+.terms-section { display:flex; gap:28px; padding:32px 0; align-items:flex-start; }
+.terms-label { width:18%; min-width:140px; padding-right:18px; }
+.terms-label h3 { font-size:20px; font-weight:700; margin:0; padding-bottom:6px; border-bottom:1px solid #e6e6e6; color:#111827; }
+
+.terms-content { width:82%; }
+
+.terms-table { list-style:none; margin:0 0 18px; padding:0; }
+.terms-table > li {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding:12px 0;
+  color:#374151;
+  font-size:15px;
+}
+
+/* left area (icon + label) */
+.term-left { display:flex; align-items:center; gap:14px; min-width:0; }
+
+/* inline SVG icon defaults (use currentColor) */
+.term-icon { width:18px; height:18px; flex:0 0 18px; display:inline-block; fill:currentColor; }
+
+/* colors for icons */
+.term-icon.term-check { color: var(--primary, #0b7c6b); }
+.term-icon.term-cross { color: #9b9b9b; }
+
+/* label text */
+.term-text { color:#374151; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* right column values */
+.term-right { color:#111827; font-size:15px; white-space:nowrap; margin-left:12px; text-align:right; min-width:120px; }
+.term-right strong { font-weight:700; }
+
+/* cancellation policy */
+.cancellation { margin-top:18px; padding-top:8px; }
+.cancellation h4 { font-size:16px; font-weight:700; margin:0 0 14px; color:#111827; }
+.cancellation p { font-size:14.5px; color:#555; line-height:1.8; margin:14px 0; max-width:780px; }
+
+/* responsive */
+@media (max-width:900px) {
+  .terms-section { flex-direction:column; gap:18px; }
+  .terms-label { width:100%; padding-right:0; }
+  .terms-content { width:100%; }
+  .terms-table > li { flex-direction:row; justify-content:space-between; padding:10px 0; }
+  .term-right { min-width:0; margin-left:8px; text-align:left; }
+}
+
+/* =========================
+   QUICK FIX — TERMS & RULES
+   Drop this at the END of suggee.css
+   ========================= */
+
+/* Scope strongly to the card area to avoid collision with other pages */
+.stay-card-wrapper .terms-section,
+.terms-section {
+  display: flex !important;
+  gap: 28px !important;
+  padding: 32px 0 !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep label column flush and same size as reference */
+.stay-card-wrapper .terms-label,
+.terms-label {
+  width: 18% !important;
+  min-width: 140px !important;
+  padding-right: 18px !important;
+  box-sizing: border-box !important;
+}
+
+/* Heading style */
+.stay-card-wrapper .terms-label h3,
+.terms-label h3 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  padding-bottom: 6px !important;
+  border-bottom: 1px solid #e6e6e6 !important;
+  color: #111827 !important;
+}
+
+/* Content column */
+.stay-card-wrapper .terms-content,
+.terms-content {
+  width: 82% !important;
+  box-sizing: border-box !important;
+}
+
+/* Row style: left(group) + right(value) */
+.stay-card-wrapper .terms-table > li,
+.terms-table > li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  padding: 12px 0 !important;
+  font-size: 15px !important;
+  color: #374151 !important;
+}
+
+/* left group (icon + label) must take flexible space so the right column stays aligned */
+.stay-card-wrapper .term-left,
+.terms-section .term-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+/* Force SVG / inline icons to use currentColor and fixed size */
+.stay-card-wrapper .term-icon,
+.terms-section .term-icon,
+svg.term-icon {
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 18px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  fill: currentColor !important;
+  stroke: none !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Explicit colors */
+.terms-section svg.term-icon.term-check,
+.terms-section .term-icon.term-check {
+  color: var(--primary, #0b7c6b) !important;
+  fill: var(--primary, #0b7c6b) !important;
+}
+
+.terms-section svg.term-icon.term-cross,
+.terms-section .term-icon.term-cross {
+  color: #9b9b9b !important;
+  fill: #9b9b9b !important;
+}
+
+/* label text - single line and ellipsis if long */
+.stay-card-wrapper .term-text,
+.terms-section .term-text {
+  color: #374151 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin: 0 !important;
+  font-size: 15px !important;
+}
+
+/* RIGHT column: fixed slot so all values align vertically */
+.stay-card-wrapper .term-right,
+.terms-section .term-right {
+  flex: 0 0 180px !important;    /* fixed width column on desktop */
+  text-align: right !important;
+  font-size: 15px !important;
+  color: #111827 !important;
+  min-width: 120px !important;
+  margin-left: 12px !important;
+}
+
+/* Make times bold like the reference */
+.stay-card-wrapper .term-right strong,
+.terms-section .term-right strong {
+  font-weight: 700 !important;
+}
+
+/* Cancellation policy copy */
+.stay-card-wrapper .cancellation,
+.terms-section .cancellation {
+  margin-top: 18px !important;
+  padding-top: 8px !important;
+}
+.stay-card-wrapper .cancellation h4,
+.terms-section .cancellation h4 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin: 0 0 14px !important;
+}
+.stay-card-wrapper .cancellation p,
+.terms-section .cancellation p {
+  font-size: 14.5px !important;
+  color: #555 !important;
+  line-height: 1.8 !important;
+  margin: 14px 0 !important;
+  max-width: 780px !important;
+}
+
+/* Responsive: on narrow screens stack label + content and allow values to wrap under the left label */
+@media (max-width: 900px) {
+  .stay-card-wrapper .terms-section,
+  .terms-section {
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+  .stay-card-wrapper .terms-label,
+  .terms-label { width: 100% !important; padding-right: 0 !important; }
+  .stay-card-wrapper .terms-content,
+  .terms-content { width: 100% !important; }
+
+  /* make right column auto so it flows naturally */
+  .stay-card-wrapper .term-right,
+  .terms-section .term-right {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    text-align: left !important;
+    margin-left: 8px !important;
+  }
+  .stay-card-wrapper .terms-table > li,
+  .terms-table > li {
+    padding: 10px 0 !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+}
+/* ========== MICRO-FIX: force TIME cell alignment & nowrap ========== */
+/* Put this at the VERY END of suggee.css */
+
+.terms-section .term-right {
+  /* push the value to the far right column and stop it from wrapping */
+  margin-left: auto !important;
+  text-align: right !important;
+  white-space: nowrap !important;   /* keep 12:00PM - 11:00AM on one line */
+  overflow: visible !important;
+  flex: 0 0 180px !important;       /* keep fixed column width on desktop */
+  min-width: 120px !important;
+}
+
+/* ensure the time itself is bold but doesn't get extra inline effects */
+.terms-section .term-right strong {
+  font-weight: 700 !important;
+  display: inline-block;           /* keeps spacing consistent */
+  white-space: nowrap !important;
+}
+
+/* Mobile: let the right value wrap under the label (stack nicely) */
+@media (max-width: 900px) {
+  .terms-section .term-right {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    margin-left: 8px !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+  .terms-section .term-right strong {
+    white-space: normal !important;
+  }
+}
+
+
+
+
+
+/* =========================
+   PRIORITY FIXES TO MATCH MALNADSTAYS
+   Paste at the end of suggee.css
+   ========================= */
+
+/* 1) TERMS ROW: force label + value on one line (fixes the 12:00PM - 11:00AM wrap) */
+.terms-table > li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  padding: 12px 0 !important;
+  flex-wrap: nowrap;               /* keep everything in one line */
+  box-sizing: border-box;
+}
+.term-left { min-width: 0; display:flex; align-items:center; gap:14px; }
+.term-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 180px);   /* reserve space for right column */
+  font-size: 15px;
+  color: #374151;
+}
+.term-right {
+  flex: 0 0 180px;                  /* fixed width so value never wraps */
+  text-align: right;
+  white-space: nowrap;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* smaller screens: allow safe stacking (so it stays readable) */
+@media (max-width: 520px) {
+  .terms-table > li { flex-direction: column; align-items: flex-start; }
+  .term-right { text-align: left; flex: 0 0 auto; margin-top: 8px; }
+  .term-text { max-width: 100%; }
+}
+
+/* 2) Icons (acc-specs) darker and crisper to match reference */
+.acc-icon,
+.spec-icon {
+  color: #5a5f63 !important;  /* darker neutral grey like reference */
+  opacity: 0.85 !important;
+  width: 56px; height: 40px;
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+/* 3) Typography tweaks — closer to reference sizing/weights */
+.property-title { font-size: 28px; font-weight: 700; color: #111827; }
+.section-title-main, .acc-heading { font-size: 18px; font-weight: 600; }
+.pricing-label h3 { font-size: 18px; font-weight: 700; }
+
+/* 4) Price pill (pricing) — match ref style */
+.price-box,
+.pricing-item .price {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-block;
+  box-shadow: none;
+}
+
+/* 5) Enquiry card tweak — dark bar at top like reference */
+.enquiry-card {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 12px;
+}
+.enquiry-card > .enquire-top {
+  background: #2f2f2f; color: #fff;
+  padding: 16px; border-radius: 8px 8px 0 0;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.enquiry-card .price-note { color: #fff; margin:0; font-weight:700; }
+.enquiry-card .enquiry-form { padding: 18px; background:#fff; border-radius:0 0 8px 8px; }
+
+/* 6) Gallery grid: tighter gap & larger thumbnails like reference */
+.gallery-grid { gap: 12px; margin: 24px 0; }
+.gallery-item { height: 160px; border-radius: 8px; overflow:hidden; }
+
+/* 7) Feature lists (chev + spacing) */
+.feature-list li { padding: 8px 0; color:#4b5563; font-size:15px; }
+.feature-list .chev { width: 14px; height: 14px; color:#c7ccd1; }
+
+/* 8) Cards / shadows: use subtle card shadow same as reference */
+.stay-card-wrapper,
+.stay-card,
+.pricing-card {
+  box-shadow: 0 4px 18px rgba(6,6,6,0.04);
+  border-radius: 12px;
+}
+
+/* 9) Slight color palette tweak to match reference's green accent */
+:root { --primary: #0b7c6b; --accent: #ff7a00; }
+
+/* 10) Small responsive tune: keep right column readable on tablet */
+@media (max-width: 992px) {
+  .pricing-container, .features-section, .terms-section {
+    padding-left: 12px; padding-right: 12px;
+  }
+  .term-right { flex: 0 0 150px; }
+}
+.terms-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.terms-list li::before {
+    content: "✔";
+    color: green;
+    margin-right: 8px;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card-link:hover .stay-card {
+  transform: translateY(-4px);
+  transition: 0.3s;
+}
+/* ================================
+   ✅ HARD FIX: SIDE-BY-SIDE CARDS
+   ================================ */
+
+#stays #cards {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 5px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  padding-bottom: 20px !important;
+}
+
+#stays #cards::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ✅ DESKTOP: 3 cards */
+#stays #cards .card-link {
+  flex: 0 0 calc((100% - 32px) / 3) !important;
+  max-width: calc((100% - 32px) / 3) !important;
+  scroll-snap-align: start !important;
+  display: block !important;
+}
+
+/* ✅ TABLET: 2 cards */
+@media (max-width: 1024px) {
+  #stays #cards .card-link {
+    flex: 0 0 calc((100% - 16px) / 2) !important;
+    max-width: calc((100% - 16px) / 2) !important;
+  }
+}
+
+/* ✅ MOBILE: 1 card */
+@media (max-width: 768px) {
+  #stays #cards .card-link {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ✅ Card safety */
+#stays #cards .card {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================
+   ✅ FINAL FORCE FIX — SIDE-BY-SIDE CAROUSEL
+   ========================================== */
+
+/* 🔥 KILL GRID & FORCE FLEX */
+.grid#cards {
+  display: flex !important;
+  grid-template-columns: none !important;
+  grid-auto-flow: unset !important;
+}
+
+/* ✅ MAIN CAROUSEL */
+#cards {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 10px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  padding-bottom: 20px !important;
+}
+
+#cards::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ✅ DESKTOP — 3 CARDS */
+#cards > .card-link {
+  flex: 0 0 calc((100% - 40px) / 3) !important;
+  max-width: calc((100% - 40px) / 3) !important;
+  scroll-snap-align: start !important;
+  display: block !important;
+}
+
+/* ✅ TABLET — 2 CARDS */
+@media (max-width: 1024px) {
+  #cards > .card-link {
+    flex: 0 0 calc((100% - 20px) / 2) !important;
+    max-width: calc((100% - 20px) / 2) !important;
+  }
+}
+
+/* ✅ MOBILE — 1 CARD */
+@media (max-width: 768px) {
+  #cards > .card-link {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ✅ CARD SAFETY */
+#cards .card {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* ================================
+   ✅ SMALLER & EQUAL CARD SIZE
+   ================================ */
+
+/* ✅ DESKTOP — 4 SMALL CARDS */
+#cards > .card-link {
+  flex: 0 0 calc((100% - 60px) / 4) !important;  /* 4 cards in one row */
+  max-width: calc((100% - 60px) / 4) !important;
+  scroll-snap-align: start !important;
+}
+
+/* ✅ FIXED EQUAL HEIGHT */
+#cards .card {
+  width: 100% !important;
+  height: 360px !important;   /* ✅ same height for all */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ IMAGE SAME SIZE */
+#cards .card img {
+  height: 190px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ✅ BODY FLEX FOR EQUAL ALIGNMENT */
+#cards .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ✅ TABLET — 3 CARDS */
+@media (max-width: 1024px) {
+  #cards > .card-link {
+    flex: 0 0 calc((100% - 40px) / 3) !important;
+    max-width: calc((100% - 40px) / 3) !important;
+  }
+}
+
+/* ✅ MOBILE — 1 FULL CARD */
+@media (max-width: 768px) {
+  #cards > .card-link {
+    flex: 0 0 85% !important;   /* nice small swipe card */
+    max-width: 85% !important;
+  }
+}
+
+/* ============================================
+   ✅ MASTER OVERRIDE — KILL GRID, FORCE FLEX
+   ============================================ */
+
+/* 1️⃣ Completely disable GRID behavior */
+.grid#cards {
+  display: flex !important;
+  grid-template-columns: none !important;
+  grid-auto-flow: unset !important;
+}
+
+/* 2️⃣ Force horizontal scrolling */
+#cards {
+  flex-wrap: nowrap !important;
+  gap: 18px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  padding-bottom: 20px !important;
+}
+
+/* Hide scrollbar */
+#cards::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* 3️⃣ DESKTOP — 3 cards per view */
+#cards > .card-link {
+  flex: 0 0 calc((100% - 36px) / 3) !important;
+  max-width: calc((100% - 36px) / 3) !important;
+  scroll-snap-align: start !important;
+  display: block !important;
+}
+
+/* 4️⃣ TABLET — 2 cards */
+@media (max-width: 1024px) {
+  #cards > .card-link {
+    flex: 0 0 calc((100% - 18px) / 2) !important;
+    max-width: calc((100% - 18px) / 2) !important;
+  }
+}
+
+/* 5️⃣ MOBILE — 1 card */
+@media (max-width: 768px) {
+  #cards > .card-link {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 6️⃣ Card width safety */
+#cards .card {
+  width: 100% !important;
+}
+
+.cancel-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 28px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
+  text-align: left;
+}
+/* =========================================
+   ✅ MALNAD-STYLE MOBILE RESPONSIVENESS FIX
+   ========================================= */
+
+/* ✅ MAIN 2-COLUMN → SINGLE COLUMN */
+@media (max-width: 992px) {
+  .stay-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  .left-column {
+    order: 1;
+  }
+
+  .enquiry-card {
+    position: relative;
+    top: 0;
+    margin-top: 25px;
+    order: 2;
+  }
+}
+
+
+
+/* ✅ PROPERTY TITLE + SHARE BUTTON FIX */
+@media (max-width: 768px) {
+  .property-title {
+    font-size: 1.5rem;
+  }
+
+  .property-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .share-btn {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    margin-top: 10px;
+  }
+}
+
+/* ✅ SPECS GRID MOBILE (4 → 2 → 1) */
+@media (max-width: 900px) {
+  .stay-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stay-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-box {
+    border-right: none;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 15px;
+  }
+
+  .spec-box:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ✅ PRICING GRID MOBILE */
+@media (max-width: 768px) {
+  .pricing-container {
+    flex-direction: column;
+  }
+
+  .pricing-label {
+    margin-bottom: 15px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .package-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* ✅ GALLERY MOBILE FIX */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+}
+
+/* ✅ ACCOMMODATION MOBILE */
+
+
+/* ✅ FEATURES GRID MOBILE (4 → 2 → 1) */
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ TERMS + CANCELLATION MOBILE */
+@media (max-width: 768px) {
+  .terms-section {
+    padding: 15px 0;
+  }
+
+  .terms-label h3 {
+    font-size: 18px;
+  }
+
+  .terms-content p,
+  .terms-list li {
+    font-size: 14px;
+  }
+}
+
+/* ✅ SIMILAR STAYS MOBILE — 1 CARD SCROLL */
+@media (max-width: 768px) {
+  #cards .card-link {
+    flex: 0 0 85% !important;
+  }
+
+  .carousel-buttons {
+    display: none;
+  }
+}
+
+/* ✅ HEADER MOBILE FIX */
+@media (max-width: 992px) {
+  .main-menu {
+    display: none !important;
+  }
+
+  .mobile_menu {
+    display: block !important;
+  }
+
+  .book_room {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+/* 12/12/25 */
+
+/* ============================
+   ⭐ GLOBAL MOBILE FIXES
+=============================== */
+@media (max-width: 768px) {
+
+    /* Container */
+    .container, .page {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Two-column layout → single column */
+    .stay-main {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* Enquiry card moves below content */
+    .enquiry-card {
+        position: relative;
+        top: 0;
+        margin-top: 20px;
+    }
+
+    /* Property title & meta */
+    .property-title {
+        font-size: 1.4rem !important;
+    }
+
+    .property-meta {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Share button fix */
+    .share-btn {
+        right: 0;
+        top: -10px;
+        transform: scale(.9);
+    }
+
+    /* Specs grid → 2 columns */
+    .stay-specs {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 16px 0;
+    }
+
+    .spec-box {
+        border-right: none !important;
+        padding: 10px 0;
+    }
+
+    /* About section spacing */
+    .about-card {
+        padding: 18px 14px;
+    }
+
+    /* Pricing layout → single column */
+    .pricing-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pricing-label {
+        width: 100% !important;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px;
+    }
+
+    /* Gallery 4×2 → 1 column */
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    .gallery-item {
+        height: 220px !important;
+    }
+
+    /* Accommodation grid */
+    
+
+
+    /* Features grid (4 columns → 1 column) */
+    .features-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* Terms text spacing */
+    .terms-content {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* ============================
+   ⭐ TABLET FIXES
+=============================== */
+@media (max-width: 1024px) {
+
+    .stay-main {
+        grid-template-columns: 1fr 300px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILE: show only first image inside each hero-slide (no HTML/JS changes) */
+
+
+
+
+/* ===========================
+   MOBILE — TIGHT 2-COLUMN GALLERY
+   Paste at the very end of css/suggee.css
+   (Only applies <= 768px, desktop unchanged)
+   =========================== */
+@media (max-width: 768px) {
+
+  /* make the gallery area use the content width without big gutters */
+  .gallery-wrapper,
+  .gallery-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2 columns, tiles flush together like reference */
+  .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: 120px;    /* base tile height (tweak below) */
+    gap: 4px !important;      /* tiny gutter like reference */
+    align-items: stretch;
+  }
+
+  /* ensure gallery items fit inside grid and do not overflow */
+  .gallery-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+    min-height: 0 !important; /* prevents overflow clipping bugs */
+    height: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important; /* remove heavy shadow for clean tile look */
+    border-radius: 0 !important; /* remove rounded corners like reference */
+  }
+
+  /* images fill their tile and are cropped cleanly */
+  .gallery-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    vertical-align: middle !important;
+  }
+
+  /* small tweak: if you have a top-left logo, keep it positioned but on mobile use smaller margin */
+  .gallery-logo {
+    display: block;
+    max-width: 160px;
+    margin: 6px 8px;
+  }
+
+  /* make sure the gallery fully occupies its layout so next sections don't overlap */
+  .gallery-grid { align-content: start !important; }
+
+  /* add breathing room below gallery so following section never overlaps */
+  .gallery-wrapper + * {
+    margin-top: 12px !important;
+  }
+
+  /* OPTIONAL: make a few tiles taller (mimic more dynamic collage)
+     Uncomment / edit the rules below to make specific tiles span 2 rows.
+     e.g. to make first and fourth items taller:
+  */
+  /* .gallery-grid .gallery-item:nth-child(1) { grid-row: span 2; } */
+  /* .gallery-grid .gallery-item:nth-child(4) { grid-row: span 2; } */
+
+  /* To increase tile height globally, change grid-auto-rows, e.g. 140px or 160px */
+  /* .gallery-grid { grid-auto-rows: 140px; } */
+}
+
+
+
+
+
+/* =========================================
+   REMOVE SIDE GAPS – MALNAD STYLE (MOBILE)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Kill Bootstrap container padding */
+  .container,
+  .stay-main.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Remove page side gaps */
+  .stay-main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* Make main white card FULL WIDTH */
+  .stay-card-wrapper {
+    border-radius: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Accommodation section should align edge-to-edge */
+  .accommodation-block {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
+
+
+/* =========================================
+   🔥 FULL EDGE-TO-EDGE FIX (MOBILE ONLY)
+   FIXES RIGHT GAP 100%
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Kill ALL container padding */
+  body,
+  .page,
+  .stay-main,
+  .stay-main.container,
+  .container,
+  .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    overflow-x: hidden;
+  }
+
+  /* Neutralize Bootstrap row negative margins */
+  .row,
+  .row.no-gutters {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Force left column full width */
+  .left-column {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+  }
+
+  /* Main white card */
+  .stay-card-wrapper {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-shadow: none !important;
+  }
+
+  /* Prevent hidden overflow causing right gap */
+  html {
+    overflow-x: hidden;
+  }
+}
+
+
+
+
+/* =================================================
+   MALNADSTAYS MOBILE FIX — POST HEADER ONLY
+   Desktop untouched
+   ================================================= */
+
+@media (max-width: 768px) {
+
+  /* =====================
+     HERO (after header)
+     ===================== */
+
+  .hero-carousel,
+  .hero-track-wrapper,
+  .hero-track {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Force hero slides to behave as single image */
+  .hero-slide {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide all images except first */
+  .hero-slide img {
+    display: none !important;
+  }
+
+  .hero-slide img:first-of-type {
+    display: block !important;
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+  }
+
+  /* =====================
+     MAIN CONTENT CARD
+     ===================== */
+
+  .stay-main {
+    margin: 0 !important;
+    padding: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .stay-card-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+}
+
+
+
+/* =========================================
+   🔥 MALNAD PRICING — MOBILE FIX ONLY
+   Starts from "Pricing" section
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Pricing container */
+  .pricing-section,
+  .pricing-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Force 2-column grid like reference */
+  .pricing-grid,
+  .pricing-grid-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 18px !important;
+  }
+
+  /* Each pricing item */
+  .pricing-item {
+    margin: 0 !important;
+  }
+
+  /* Strike price */
+  .pricing-item .strike,
+  .strike-price {
+    font-size: 12px !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Package title + price INLINE */
+  .pricing-item h4,
+  .package-row {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    font-size: 14px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Price pill — match Malnad */
+  .pricing-item .price,
+  .price-box {
+    padding: 2px 10px !important;
+    font-size: 12.5px !important;
+    border-radius: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Description text */
+  .pricing-item .desc,
+  .pkg-desc {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .pricing-item {
+    min-height: 100%;
+  }
+}
+
+
+/* Accommodation icon – exact Malnad tone */
+.acc-icon i,
+.acc-icon svg {
+  font-size: 38px !important;     /* slightly smaller */
+  color: #c7ccd1 !important;      /* softer grey */
+  opacity: 1 !important;
+  margin-bottom: 12px;
+}
+
+
+
+
+
+.acc-title {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 6px;
+}
+
+.acc-line {
+  font-size: 14px !important;
+  color: #6b7280 !important;
+  line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+
+  .acc-icon i,
+  .acc-icon svg {
+    font-size: 36px !important;
+  }
+}
+
+
+
+
+/* =================================================
+   🔥 FINAL ACCOMMODATION FIX — MOBILE FIRST
+   Overrides ALL previous acc-* rules
+   ================================================= */
+
+@media (max-width: 768px) {
+
+  
+
+  /* Title */
+  .acc-heading,
+  .acc-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    margin-bottom: 18px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    text-align: left !important;
+  }
+
+  /* Force SINGLE clean layout system */
+  
+
+  
+
+  /* FontAwesome bed icon — THIS is the real icon */
+  .acc-icon i {
+    font-size: 36px !important;
+    color: #c7ccd1 !important;
+    margin-bottom: 10px !important;
+    display: inline-block !important;
+  }
+
+  /* Title text */
+  .acc-col h4,
+  .acc-item h4 {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px !important;
+    color: #111827 !important;
+  }
+
+  /* Detail lines */
+  .acc-col p,
+  .acc-item p,
+  .acc-line {
+    font-size: 14px !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+    line-height: 1.6 !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   📱 FINAL MOBILE OVERRIDE — MATCH REFERENCE IMAGE
+   Desktop untouched | Header untouched
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* -------- GLOBAL WIDTH & GUTTERS -------- */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .container,
+  .stay-main,
+  .stay-main.container,
+  .page {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* -------- HERO (single image like reference) -------- */
+  .hero-slide {
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  .hero-slide img {
+    display: none !important;
+  }
+
+  .hero-slide img:first-of-type {
+    display: block !important;
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+  }
+
+  /* -------- MAIN CARD -------- */
+  .stay-main {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .stay-card-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* -------- TITLE + META -------- */
+  .property-title {
+    font-size: 1.45rem !important;
+    line-height: 1.3;
+  }
+
+  .property-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  /* -------- SHARE BUTTON -------- */
+  .share-btn {
+    position: static !important;
+    transform: none !important;
+    margin-top: 10px;
+  }
+
+  /* -------- SPECS (2×2 GRID) -------- */
+  .stay-specs {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 16px 0 !important;
+  }
+
+  .spec-box {
+    border-right: none !important;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 14px;
+  }
+
+  .spec-box:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  /* -------- GALLERY (2-COLUMN TIGHT GRID) -------- */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4px !important;
+    margin: 16px 0 !important;
+  }
+
+  .gallery-item {
+    height: 120px !important;
+    border-radius: 0 !important;
+  }
+
+  /* -------- ABOUT -------- */
+  .about-card {
+    padding: 16px !important;
+  }
+
+  /* -------- PRICING (2×2 LIKE REFERENCE) -------- */
+  .pricing-container {
+    flex-direction: column !important;
+    padding: 0 !important;
+  }
+
+  .pricing-label {
+    width: 100% !important;
+    margin-bottom: 14px;
+  }
+
+  .pricing-grid,
+  .pricing-grid-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .package-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* -------- ACCOMMODATION -------- */
+  
+
+
+  /* -------- FEATURES -------- */
+  .features-section {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  /* -------- TERMS -------- */
+  .terms-section {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .terms-label,
+  .terms-content {
+    width: 100% !important;
+  }
+
+  .term-right {
+    white-space: nowrap;
+  }
+
+  /* -------- SIMILAR STAYS -------- */
+  #cards .card-link {
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+  }
+
+  .carousel-buttons {
+    display: none;
+  }
+}
+
+
+
+/* =================================================
+   📱 SECTION FIX #1 — TITLE / META / SHARE (MOBILE)
+   Matches Malnad reference
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Breadcrumb */
+  .property-breadcrumb {
+    font-size: 13px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Header wrapper */
+  .property-header {
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+  }
+
+  /* Title */
+  .property-title {
+    font-size: 22px !important;   /* matches reference */
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Meta row (location only) */
+  .property-meta {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 14px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Hide stars + rating badge on mobile */
+  .property-stars,
+  .property-rating-text {
+    display: none !important;
+  }
+
+  /* Share button — right aligned, centered vertically */
+  .share-btn {
+    position: absolute !important;
+    right: 0 !important;
+    top: 8px !important;
+    transform: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    margin: 0 !important;
+  }
+
+}
+
+
+/* =================================================
+   📱 SECTION FIX #2 — SPECS GRID (MOBILE)
+   Matches Malnad reference
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Specs container — remove card look */
+  .stay-specs {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 12px 0 !important;
+    margin: 16px 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px 0 !important;
+  }
+
+  /* Each spec box */
+  .spec-box {
+    padding: 10px 6px !important;
+    border-right: none !important;
+    border-bottom: 1px dotted #e5e7eb !important;
+    text-align: center;
+  }
+
+  /* Remove bottom border for last row */
+  .spec-box:nth-last-child(-n+2) {
+    border-bottom: none !important;
+  }
+
+  /* Icons — lighter like reference */
+  .spec-icon {
+    width: 30px !important;
+    opacity: 0.35 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Label text */
+  .spec-title {
+    font-size: 13px !important;
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Value text */
+  .spec-value {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    white-space: nowrap;
+  }
+
+}
+
+
+/* =================================================
+   📱 MICRO FIX — BED ICON SIZE MATCH (MOBILE)
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Target only the bed icon (Font Awesome) */
+  .spec-box i.fa-bed,
+  .spec-box i.fa-hotel {
+    font-size: 26px !important;   /* slightly smaller */
+    opacity: 0.35 !important;
+    transform: translateY(2px);   /* optical alignment */
+  }
+
+  /* Keep SVG / img icons unchanged */
+  .spec-box img.spec-icon,
+  .spec-box svg.spec-icon {
+    width: 30px !important;
+    height: auto;
+  }
+
+}
+
+
+/* =================================================
+   📱 SECTION FIX #3 — ABOUT TITLE (2 DIVIDERS)
+   Exact reference behavior
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* About wrapper — no card */
+  .about-card {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 18px 0 12px !important;
+  }
+
+  /* Title between two lines */
+  .about-card .section-title-main,
+  .about-card h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+
+    padding: 10px 0 !important;
+    margin: 0 !important;
+
+    border-top: 1px solid #e5e7eb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+}
+
+
+
+/* =================================================
+   📱 SECTION FIX #4 — PRICING (MOBILE)
+   Match Malnad reference exactly
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Pricing wrapper */
+  .pricing-section,
+  .pricing-container {
+    padding: 0 !important;
+    margin-top: 18px !important;
+  }
+
+  /* Pricing title */
+  .pricing-section h3,
+  .pricing-label h3 {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin-bottom: 14px !important;
+    color: #111827 !important;
+  }
+
+  /* FORCE 2×2 GRID */
+  .pricing-grid,
+  .pricing-grid-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px 16px !important;
+  }
+
+  /* Individual pricing block — flatten it */
+  .pricing-item {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Package title */
+  .pricing-item h4,
+  .pkg-name {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Price pill */
+  .pricing-item .price,
+  .price-box {
+    display: inline-block !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    padding: 3px 10px !important;
+    border-radius: 14px !important;
+    border: 1px solid #e5e7eb !important;
+    background: #fff !important;
+    color: #111827 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Description text — tighter & lighter */
+  .pricing-item .desc,
+  .pkg-desc {
+    font-size: 12.8px !important;
+    line-height: 1.5 !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+  }
+
+}
+
+
+/* =================================================
+   ✅ ACCOMMODATION — CLEAN & FINAL (MOBILE + DESKTOP)
+   No conflicts, no overrides
+   ================================================= */
+
+/* Desktop / default */
+.acc-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  text-align: center;
+}
+
+.acc-col {
+  flex: 0 0 33.333%;
+}
+
+.acc-icon i,
+.acc-icon svg {
+  font-size: 40px;
+  color: #c7ccd1;
+  margin-bottom: 10px;
+}
+
+.acc-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.acc-line {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* 📱 MOBILE — STILL 3 SIDE-BY-SIDE */
+@media (max-width: 768px) {
+  .acc-grid {
+    gap: 8px;
+  }
+
+  .acc-col {
+    flex: 0 0 33.333%;
+  }
+
+  .acc-icon i,
+  .acc-icon svg {
+    font-size: 28px;
+  }
+
+  .acc-title {
+    font-size: 13px;
+  }
+
+  .acc-line {
+    font-size: 12.5px;
+  }
+}
+
+
+
+
+
+/* =================================================
+   📱 FEATURES — FIX HTML STRUCTURE VISUALLY (MOBILE)
+   ================================================= */
+@media (max-width: 768px) {
+
+  /* Remove side label spacing */
+  .features-section {
+    padding: 12px 0 !important;
+  }
+
+  /* Stack everything vertically */
+  .features-grid {
+    display: block !important;
+  }
+
+  /* Remove empty heading space */
+  .feature-block h4:empty,
+  .feature-block h4:has(:not(*)) {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 🔥 MERGE lists visually */
+  .feature-block {
+    margin-bottom: 12px !important;
+  }
+
+  /* Make each UL a 2-column grid */
+  .feature-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 18px !important;
+    row-gap: 6px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Tight list items */
+  .feature-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Keep only ONE arrow (you already have > in HTML) */
+  .chev {
+    display: none !important;
+  }
+
+  /* Reduce visual arrow spacing */
+  .chev-char {
+    margin-right: 4px;
+    color: #9ca3af;
+    font-weight: 500;
+  }
+
+  /* Headings spacing */
+  .feature-block h4 {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    margin-top: 12px !important;
+    color: #111827 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 18px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .acc-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+
+  .acc-col {
+    width: 33.333% !important;
+    text-align: center;
+  }
+
+  .acc-icon i,
+  .acc-icon svg {
+    font-size: 30px !important; /* reduced */
+    margin-bottom: 6px;
+  }
+
+  .acc-title {
+    font-size: 13px !important;
+    line-height: 1.2;
+  }
+
+  .acc-line {
+    font-size: 12px !important;
+    line-height: 1.4;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px 20px !important; /* row gap, column gap */
+  }
+
+  .feature-list li {
+    padding: 6px 0 !important;
+    font-size: 14px !important;
+  }
+
+  .feature-block h4 {
+    margin-bottom: 6px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .section-heading,
+  .features-label h3 {
+    margin-bottom: 10px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14.5px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .feature-list {
+    margin-top: 6px !important;
+  }
+
+  .feature-list li {
+    padding: 5px 0 !important;
+    line-height: 1.45;
+  }
+
+  .feature-block {
+    margin-bottom: 6px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .terms-content p,
+  .cancellation p {
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer_widget {
+    margin-bottom: 20px;
+  }
+}
+/* ===============================
+   MOBILE ONLY – FEATURES FIX
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Stack feature blocks */
+  .features-grid {
+    display: block;
+  }
+
+  /* Remove fake empty headings */
+  .feature-block h4:empty {
+    display: none;
+  }
+
+  /* Make lists 2-per-row */
+  .feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    padding: 0;
+    margin-bottom: 18px;
+  }
+
+  /* Smaller text for mobile */
+  .feature-list li {
+    font-size: 13px;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Icon spacing */
+  .chev {
+    width: 12px;
+    margin-right: 6px;
+  }
+
+  /* Section spacing */
+  .feature-block {
+    margin-bottom: 20px;
+  }
+}
+/* ================= MOBILE MENU – FINAL CLEAN FIX ================= */
+@media (max-width: 992px) {
+
+  /* Hide desktop menu */
+  .main-menu {
+    display: none !important;
+  }
+
+  .mobile_menu {
+    position: relative;
+    padding: 10px 0;
+  }
+
+  /* Toggle button */
+  .mobile-toggle {
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Mobile nav */
+  .mobile-nav {
+    display: none;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+    padding: 6px 0;
+  }
+
+  .mobile-nav.open {
+    display: block;
+  }
+
+  /* FORCE VERTICAL */
+  .mobile-nav {
+    display: none;
+    flex-direction: column !important;
+  }
+
+  .mobile-nav li {
+    display: block !important;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-nav li a {
+    display: block !important;
+    padding: 8px 16px;
+    font-size: 14px;  /* smaller font */
+    color: #000;
+    border: none !important;
+  }
+
+  /* Remove desktop underline */
+  .mobile-nav li a:hover,
+  .mobile-nav li a.active {
+    border-bottom: none !important;
+  }
+
+  /* Submenu */
+  .mobile-nav .submenu {
+    display: none;
+    position: static !important;
+    background: #f8f8f8;
+    box-shadow: none;
+  }
+
+  .mobile-nav .submenu.open {
+    display: block;
+  }
+
+  .mobile-nav .submenu li a {
+    padding-left: 30px;
+    font-size: 13px;
+    color: #444;
+  }
+}
+/* ============================
+   PRICING MOBILE GAP FIX
+   ============================ */
+@media (max-width: 768px) {
+
+  .pricing-container {
+    padding: 15px 0;
+    margin-top: 10px;
+  }
+
+  .pricing-grid {
+    width: 100%;
+    row-gap: 16px;
+  }
+
+  .pricing-label {
+    margin-bottom: 12px;
+  }
+
+  .pkg-desc {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+.resort-desc {
+  max-width: 820px;
+  margin: 20px auto;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  text-align: center;        /* center looks premium for intro text */
+}
+
+/* Highlight important words */
+.resort-desc strong {
+  color: #0b7c6b;            /* resort primary color */
+  font-weight: 600;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .resort-desc {
+    font-size: 14.5px;
+    line-height: 1.6;
+    padding: 0 14px;
+  }
+}
+/* Make footer row a flex container */
+.footer .footer_top .container .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* Make each footer column flexible equal width */
+.footer .footer_widget {
+    flex: 1 !important;
+    min-width: 200px;
+}
+
+/* Remove Bootstrap widths that cause breaking */
+.footer .col-xl-3,
+.footer .col-xl-2,
+.footer .col-xl-4,
+.footer .col-lg-3,
+.footer .col-lg-2,
+.footer .col-lg-4,
+.footer .col-md-6 {
+    width: auto !important;
+    max-width: none !important;
+    flex: 1 !important;
+}
+@media(max-width: 992px){
+    .footer .footer_top .container .row {
+        flex-wrap: wrap !important;
+    }
+    .footer .footer_widget {
+        flex: 0 0 48% !important;
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 576px){
+    .footer .footer_widget {
+        flex: 0 0 100% !important;
+    }
+}
+/* Remove left gap only on the first footer column */
+.footer .footer_top .container .row > div:first-child {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+/* Footer layout custom widths */
+.footer .footer_top .container .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Address */
+.footer .footer_top .container .row > div:nth-child(1) {
+    flex: 0.8;
+}
+
+/* Reservation */
+.footer .footer_top .container .row > div:nth-child(2) {
+    flex: 0.8;
+}
+
+/* Navigation */
+.footer .footer_top .container .row > div:nth-child(3) {
+    flex: 1.2;
+}
+
+/* Resources */
+.footer .footer_top .container .row > div:nth-child(4) {
+    flex: 3;
+}
+
+/* Newsletter */
+.footer .footer_top .container .row > div:nth-child(5) {
+    flex: 2;
+}
+>>>>>>> 062f5c4a6022814575da9ada940ec6d94618b9d5

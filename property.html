@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Top 10 Resorts in Bangalore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    :root{--accent:#0f766e;--accent-2:#f59e0b;--muted:#6b7280;--bg:#f8fafc}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0;background:var(--bg);color:#0f172a;}
+    header{background:white;box-shadow:0 6px 18px rgba(15,23,42,0.06);position:sticky;top:0;z-index:40}
+    .container{max-width:1180px;margin:0 auto;padding:20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent)}
+    .logo img{height:38px}
+    nav ul{display:flex;gap:14px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg,rgba(15,118,110,0.06),transparent);padding:28px 0}
+    .search-card{background:white;border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(15,23,42,0.06);display:flex;gap:12px;align-items:center}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid #eef2f7;font-size:13px;color:var(--muted)}
+    .search-input{flex:1;display:flex;gap:8px;align-items:center}
+    .search-input input, .search-input select{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e6eef2;font-size:14px}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
+
+    /* stats */
+    .stats{display:flex;gap:24px;margin-top:16px}
+    .stat{background:white;padding:12px;border-radius:10px;flex:1;text-align:center}
+    .stat h3{margin:6px 0;color:var(--accent)}
+    .section-title{margin:28px 0 14px;font-size:20px}
+
+    /* collections */
+    .collections{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+    .collection-card{background:white;border-radius:12px;padding:18px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 18px rgba(12,15,25,0.04)}
+    .collection-card img{height:48px;width:48px;border-radius:8px;object-fit:cover}
+
+    /* stays grid */
+    
+    .grid {
+  display: grid;
+  gap: 16px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    .card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(12,15,25,0.06);display:flex;flex-direction:column}
+    .card img{width:100%;height:160px;object-fit:cover}
+    .card-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:8px}
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:#eef7f6;color:var(--accent);padding:6px 8px;border-radius:8px;font-size:12px}
+    .price{color:var(--accent-2);font-weight:700}
+    .rating{background:#fff3cd;color:#92400e;padding:6px 8px;border-radius:8px;font-weight:700}
+
+    footer{margin-top:36px;padding:28px 0;background:#042021;color:#d7fbf7}
+    footer .container{display:flex;justify-content:space-between;align-items:center}
+
+    /*card*/
+    .card-link{
+  text-decoration:none;
+  color:inherit;
+  
+}
+/* RESET – keep only once */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER WRAPPER */
+header {
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+}
+
+/* MAIN HEADER AREA */
+.main-header-area {
+    padding: 20px 40px;
+    position: relative;
+}
+
+/* Make the row behave like a proper 3-part layout:
+   [CENTERED MENU]       [RIGHT ICONS + BUTTON]
+*/
+.header-area .row.align-items-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LEFT COLUMN – center menu inside this column */
+.col-xl-6.col-lg-6 {
+    display: flex;
+    justify-content: center;
+}
+
+/* NAV MENU UL */
+.main-menu nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;                 /* equal spacing between items */
+    list-style: none;
+}
+
+/* NAV ITEMS */
+#navigation li {
+    list-style: none;
+    position: relative;
+}
+
+#navigation li a {
+    color: #000;               /* TEXT BLACK */
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Underline effect */
+#navigation li a:hover,
+#navigation li a.active {
+    border-bottom: 2px solid #000;
+}
+
+/* SUBMENU DROPDOWNS */
+/* ===== DESKTOP DROPDOWN ===== */
+#navigation li {
+  position: relative;
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+#navigation li:hover > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  display: block;
+  color: #000;
+  font-size: 14px;
+}
+
+.submenu li a:hover {
+  background: #f2f2f2;
+}
+@media (max-width: 992px) {
+
+  .mobile_menu {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 15px;
+  }
+
+  .main-menu {
+    display: none;
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+  }
+
+  .main-menu.active {
+    display: block;
+  }
+
+  .main-menu nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  #navigation li {
+    width: 100%;
+  }
+
+  #navigation li a {
+    padding: 10px 16px;
+    font-size: 14px;   /* small font */
+    display: block;
+    border: none;
+  }
+
+  /* Submenu below parent */
+  .submenu {
+    display: none;
+    position: static;
+    background: #f8f8f8;
+    box-shadow: none;
+  }
+
+  .submenu.open {
+    display: block;
+  }
+  .mobile_menu::after {
+  content: "☰ Menu";
+  color: #000;
+}
+
+
+  .submenu li a {
+    padding-left: 30px;
+    font-size: 13px;
+  }
+}
+
+
+/* ===== MOBILE DROPDOWN ===== */
+@media (max-width: 992px) {
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    transform: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .submenu.open {
+    opacity: 1;
+    max-height: 500px;
+    visibility: visible;
+  }
+}
+
+/* RIGHT SIDE – ICONS + BUTTON */
+.book_room {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* SOCIAL ICONS WRAPPER */
+.socail_links ul {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socail_links ul li a {
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul li a i {
+    font-size: 22px;
+    color: #000;               /* ICONS BLACK & VISIBLE */
+    transition: 0.2s;
+}
+
+.socail_links ul li a i:hover {
+    color: #ff7900;
+}
+
+/* BUTTON */
+.book_btn a {
+    background: #ff7e00;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff !important;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.book_btn a:hover {
+    background: #ff9100;
+}
+/* ===== MOBILE MENU – FINAL FIX ===== */
+.mobile_menu {
+  display: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 15px;
+  color: #000;
+}
+
+/* Mobile view */
+@media (max-width: 992px) {
+
+  .mobile_menu {
+    display: block;   /* ✅ SHOW BUTTON */
+  }
+
+  .main-menu {
+    display: none;    /* hide menu initially */
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+  }
+
+  .main-menu.active {
+    display: block;   /* show on toggle */
+  }
+
+  .main-menu nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+  }
+}
+
+/* MOBILE MENU – simplified */
+.mobile_menu {
+    display: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+
+    .main-menu {
+        display: none !important;
+    }
+
+    .mobile_menu {
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+   
+    .book_room {
+        justify-content: center !important;
+        margin-top: 15px;
+    }
+}
+@media (max-width: 767px) {
+  .card img {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+  header {
+    position: relative;
+  }
+
+  .main-header-area {
+    padding: 15px 20px;
+  }
+
+  .book_room {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  .search-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .search-input {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-input button {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card-link {
+    min-width: 90%;
+    scroll-snap-align: start;
+      margin: 0 !important; 
+  }
+
+  #cards::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ===============================
+   FOOTER
+================================= */
+.footer {
+    background: #000;
+    color: #bdbdbd;
+    font-family: 'Inter', sans-serif;
+}
+
+/* TOP SECTION */
+.footer_top {
+    padding: 80px 0 60px;
+}
+
+.footer_widget {
+    margin-bottom: 30px;
+}
+
+.footer_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+/* TEXT */
+.footer_text {
+    font-size: 15px;
+    line-height: 28px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+/* GET DIRECTION BUTTON */
+.line-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.line-button:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+/* NAVIGATION LIST */
+.footer_widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_widget ul li {
+    margin-bottom: 12px;
+}
+
+.footer_widget ul li a {
+    color: #bdbdbd;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer_widget ul li a:hover {
+    color: #ff7a00;
+}
+
+/* NEWSLETTER */
+.newsletter_form {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.newsletter_form input {
+    flex: 1;
+    height: 45px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.newsletter_form button {
+    height: 45px;
+    padding: 0 28px;
+    background: #009dff;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter_form button:hover {
+    background: #007edb;
+}
+
+.newsletter_text {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+/* ===============================
+   COPYRIGHT SECTION
+================================= */
+.copy-right_text {
+    padding: 25px 0;
+}
+
+.footer_border {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 25px;
+}
+
+.copy_right {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.copy_right a {
+    color: #009dff;
+    text-decoration: none;
+}
+
+/* SOCIAL ICONS */
+.socail_links ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.socail_links ul li a {
+    font-size: 18px;
+    color: #bdbdbd;
+    transition: 0.3s;
+}
+
+.socail_links ul li a:hover {
+    color: #ff7a00;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+    .footer_top {
+        padding: 60px 0;
+    }
+
+    .socail_links ul {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .copy_right {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+/* Header with arrows */
+.stays-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.carousel-buttons button {
+  border: none;
+  background: #000;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Carousel container */
+.carousel {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+/* Hide scrollbar */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* ✅ 3 cards per slide (DESKTOP) */
+.carousel .card-link {
+  flex: 0 0 calc((100% - 20px) / 3); /* 3 cards */
+  scroll-snap-align: start;
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+
+
+/* Force FLEX layout and gap only for this section */
+#stays #cards {
+  display: flex !important;        /* override old .grid display */
+  gap: 8px;                        /* smaller gap between cards */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+/* Each card width – 3 per row on desktop */
+#stays #cards .card-link {
+  flex: 0 0 calc((100% - 16px) / 3);   /* 2 gaps of 8px => 16px total */
+  scroll-snap-align: start;
+}
+/* === OUR EXCLUSIVE STAYS CAROUSEL – FINAL === */
+
+/* container: horizontal carousel */
+#cards {
+  display: flex !important;
+  gap: 8px !important;              /* small gap between cards */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+/* 3 cards per view on desktop */
+#cards .card-link {
+  flex: 0 0 calc((100% - 16px) / 3) !important;  /* 3 cards, 2 gaps of 8px */
+  margin: 0 !important;
+  scroll-snap-align: start;
+}
+
+/* Card hover */
+#cards .card {
+  transition: transform 0.3s ease;
+}
+#cards .card:hover {
+  transform: translateY(-6px);
+}
+
+/* Tablet – 2 cards */
+@media (max-width: 1024px) {
+  #cards .card-link {
+    flex: 0 0 calc((100% - 8px) / 2) !important;
+  }
+}
+
+/* Mobile – 1 card */
+@media (max-width: 768px) {
+  #cards .card-link {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;   /* override old 90% rule */
+  }
+}
+
+
+/* Tablet → 2 cards */
+@media (max-width: 1024px) {
+  #stays #cards .card-link {
+    flex: 0 0 calc((100% - 8px) / 2);
+  }
+}
+
+/* Mobile → 1 card */
+@media (max-width: 768px) {
+  #stays #cards .card-link {
+    flex: 0 0 100%;
+  }
+}
+
+/* ✅ Tablets → 2 cards */
+@media (max-width: 1024px) {
+  .carousel .card-link {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
+/* ✅ Mobile → 1 card */
+@media (max-width: 768px) {
+  .carousel .card-link {
+    flex: 0 0 100%;
+  }
+}
+
+
+/* MOBILE MENU FIX */
+@media (max-width: 992px) {
+
+  .main-menu {
+    display: none;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+  }
+
+  .main-menu.active {
+    display: block;
+  }
+
+  .main-menu nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+  }
+
+  .mobile_menu {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 15px;
+    color: #000;
+  }
+}
+
+
+    /* responsive */
+    @media (max-width:720px){.search-card{flex-direction:column;align-items:stretch}.nav{flex-direction:column;align-items:stretch}.stats{flex-direction:column}}
+  </style>
+</head>
+<body>
+      <header>
+    <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center no-gutters">
+
+                    <!-- LEFT MENU -->
+                    <div class="col-xl-6 col-lg-6">
+  <div class="main-menu">
+
+    <div class="d-lg-none">
+      <div class="mobile_menu">☰ Menu</div>
+    </div>
+
+    <nav>
+      <ul id="navigation">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="#">Blog</a>
+          <ul class="submenu">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="single-blog.html">Single Blog</a></li>
+          </ul>
+        </li>
+        <li><a href="property.html">Property</a></li>
+        <li>
+          <a href="#">Pages</a>
+          <ul class="submenu">
+            <li><a href="elements.html">Elements</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
+
+
+                    <!-- EMPTY CENTER for symmetry -->
+                    <div class="col-xl-2 col-lg-2"></div>
+
+                    <!-- RIGHT SIDE: SOCIAL ICONS + BUTTON -->
+                    <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                        <div class="book_room d-flex justify-content-end align-items-center">
+
+                            <div class="socail_links mr-3">
+                                <ul class="d-flex">
+                                    <li>
+                                        <a href="https://www.facebook.com/share/1EcRs7ddTQ/">
+                                            <i class="fa fa-facebook-square"></i>
+                                        </a>
+                                    </li>
+                                    <li class="ml-3">
+                                        <a href="https://www.instagram.com/suggeeresort?igsh=YWw5MDJwd2RkOG56">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="book_btn">
+                                <a href="booking.html" class="btn btn-primary">
+                                    Book A Room
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MOBILE MENU -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    
+
+<section id="stays" class="container" style="margin-top:20px">
+  <div class="stays-header">
+    <h2 class="section-title">Our Exclusive Stays</h2>
+    <div class="carousel-buttons">
+      <button onclick="document.getElementById('cards').scrollBy({left:-350,behavior:'smooth'})">&#10094;</button>
+      <button onclick="document.getElementById('cards').scrollBy({left:350,behavior:'smooth'})">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="grid carousel" id="cards">
+
+    <!-- ✅ YOUR CARDS (UNCHANGED) -->
+
+    <a href="suggee.html" class="card-link">
+      <article class="card">
+        <img src="img/resort/suggee11.jpg" alt="stay">
+        <div class="card-body">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3 style="margin:0;font-size:16px">Suggee Resort</h3>
+            <div class="rating">4.6</div>
+          </div>
+          <div style="color:var(--muted);font-size:13px">Bangalore</div>
+          <div class="meta">
+            <div class="tags"><span class="tag">Day outing</span><span class="tag">Adventure</span></div>
+            <div class="price">₹1,350/Adult</div>
+          </div>
+          <p style="margin:8px 0 0;color:var(--muted);font-size:13px">5 Rooms • 27 Guests</p>
+        </div>
+      </article>
+    </a>
+ <a href="whisper.html" class="card-link">
+        <article class="card" data-location="Chikmagalur" data-pets="no">
+          <img src="img/resort/1 (3).jpeg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Whispering Palms Resorty</h3>
+              <div class="rating">4.4</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Bangalore</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Premium Day Out</span><span class="tag">Couple Friendly</span></div>
+              <div class="price">₹2,800/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">5 Rooms • 14 Guests • Mountain View</p>
+          </div>
+        </article>
+      </a>
+
+        <!-- card 3 -->
+           <a href="nandi.html" class="card-link">
+        <article class="card" data-location="Bangalore" data-pets="yes">
+          <img src="img/resort/1 (2).jpeg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Nandi Breeze Resort</h3>
+              <div class="rating">4.5</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Kanakapura, Bengaluru</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Adventure</span><span class="tag">Pool</span></div>
+              <div class="price">₹2,650/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">40 Rooms • Adventure activities</p>
+          </div>
+        </article>
+           </a>
+        <!-- card 4 -->
+           <a href="Sandal.html" class="card-link">
+        <article class="card" data-location="Kanakapura" data-pets="no">
+          <img src="img/resort/2 (4).jpg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Sandalwood Grove Retreat</h3>
+              <div class="rating">4.7</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Bangalore</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Bonfire</span><span class="tag">Pool</span></div>
+              <div class="price">₹2,850/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">14 Rooms • Swimming Pool • Campfire</p>
+          </div>
+        </article>
+        </a>
+
+        <a href="green.html" class="card-link">
+        <article class="card" data-location="Kanakapura" data-pets="no">
+          <img src="img/resort/2 (2).jpg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Greenstone Retreat</h3>
+              <div class="rating">4.7</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Bangalore</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Bonfire</span><span class="tag">Pool</span></div>
+              <div class="price">₹2,600/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">14 Rooms • Swimming Pool • Campfire</p>
+          </div>
+        </article>
+        </a>
+
+        <a href="royal.html" class="card-link">
+        <article class="card" data-location="Kanakapura" data-pets="no">
+          <img src="img/resort/2 (5).jpg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Royal Fern Retreat</h3>
+              <div class="rating">4.7</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Bangalore</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Bonfire</span><span class="tag">Pool</span></div>
+              <div class="price">₹2,900/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">15 Rooms • Swimming Pool • Campfire</p>
+          </div>
+        </article>
+        </a>
+
+        <a href="misty.html" class="card-link">
+        <article class="card" data-location="Kanakapura" data-pets="no">
+          <img src="img/resort/2 (6).jpg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Misty Banyan Retreat</h3>
+              <div class="rating">4.7</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Bangalore</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Bonfire</span><span class="tag">Pool</span></div>
+              <div class="price">₹3,100/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">17 Rooms • Swimming Pool • Campfire</p>
+          </div>
+        </article>
+        </a>
+
+        <a href="peacock.html" class="card-link">
+        <article class="card" data-location="Kanakapura" data-pets="no">
+          <img src="img/resort/2 (7).jpg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Peacock Ridge Resort</h3>
+              <div class="rating">4.7</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Bangalore</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Bonfire</span><span class="tag">Pool</span></div>
+              <div class="price">₹2,750/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">14 Rooms • Swimming Pool • Campfire</p>
+          </div>
+        </article>
+        </a>
+
+        <a href="lotus.html" class="card-link">
+        <article class="card" data-location="Kanakapura" data-pets="no">
+          <img src="img/resort/nisarga.jpg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Lotus Valley Hideaway</h3>
+              <div class="rating">4.7</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Bangalore</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Bonfire</span><span class="tag">Pool</span></div>
+              <div class="price">₹3,150/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">15 Rooms • Swimming Pool • Campfire</p>
+          </div>
+        </article>
+        </a>
+
+        <a href="blue.html" class="card-link">
+        <article class="card" data-location="Kanakapura" data-pets="no">
+          <img src="img/resort/resort (14).jpeg" alt="stay">
+          <div class="card-body">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h3 style="margin:0;font-size:16px">Blue Mist Retreat</h3>
+              <div class="rating">4.7</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Bangalore</div>
+            <div class="meta">
+              <div class="tags"><span class="tag">Bonfire</span><span class="tag">Pool</span></div>
+              <div class="price">₹3,000/Adult</div>
+            </div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:13px">16 Rooms • Swimming Pool • Campfire</p>
+          </div>
+        </article>
+        </a>
+    
+    
+  </div>
+</section>
+
+
+ <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                address
+                            </h3>
+                            <p class="footer_text"> 200, Green road, Mongla, <br>
+                                New Yor City USA</p>
+                            <a href="#" class="line-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Reservation
+                            </h3>
+                            <p class="footer_text">+10 367 267 2678 <br>
+                                reservation@montana.com</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Navigation
+                            </h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Rooms</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Newsletter
+                            </h3>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit">Sign Up</button>
+                            </form>
+                            <p class="newsletter_text">Subscribe newsletter to get updates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-8 col-md-7 col-lg-9">
+                        <p class="copy_right">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                    <div class="col-xl-4 col-md-5 col-lg-3">
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  </main>
+
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenu = document.querySelector(".mobile_menu");
+  const desktopMenu = document.querySelector(".main-menu nav ul");
+
+  if (!mobileMenu || !desktopMenu) return;
+
+  // Prevent duplicate menu
+  if (mobileMenu.querySelector(".mobile-nav")) return;
+
+  // Create toggle button
+  const toggle = document.createElement("div");
+  toggle.className = "mobile-toggle";
+  toggle.innerHTML = "☰ Menu";
+  mobileMenu.appendChild(toggle);
+
+  // Clone desktop menu
+  const mobileNav = desktopMenu.cloneNode(true);
+  mobileNav.className = "mobile-nav";
+  mobileMenu.appendChild(mobileNav);
+
+  // Toggle menu
+  toggle.addEventListener("click", () => {
+    mobileNav.classList.toggle("open");
+  });
+
+  // Submenu toggle
+  mobileNav.querySelectorAll("li > a").forEach(link => {
+    const submenu = link.nextElementSibling;
+    if (submenu && submenu.classList.contains("submenu")) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        submenu.classList.toggle("open");
+      });
+    }
+  });
+});
+
+</script>
+
+
+
+  <script>
+    // small filtering demo: filter cards by location and pets
+    const applyBtn = document.getElementById('apply');
+    applyBtn.addEventListener('click', ()=>{
+      const loc = document.getElementById('location').value.trim();
+      const pets = document.getElementById('pets').value;
+      const cards = document.querySelectorAll('#cards .card');
+      cards.forEach(c=>{
+        const cLoc = c.getAttribute('data-location') || '';
+        const cPets = c.getAttribute('data-pets') || 'any';
+        let show = true;
+        if(loc && !cLoc.toLowerCase().includes(loc.toLowerCase())) show=false;
+        if(pets!=='any' && pets!==cPets) show=false;
+        c.style.display = show? 'flex':'none';
+      })
+    })
+  </script>
+</body>
+</html>

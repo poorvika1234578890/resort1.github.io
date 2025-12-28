@@ -1,0 +1,34 @@
+.boxed-btn, 
+.book_btn a {
+    background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+    color: #fff; /* Text color */
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boxed-btn:hover,
+.book_btn a:hover {
+    background-color: rgba(255, 0, 0, 0.7); /* Slightly darker on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+.book_now1{
+  display: inline-block;
+  background-color: #FF6600; /* Thrillophilia orange */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.book_now1:hover {
+  background-color: #e65c00; /* Darker orange on hover */
+  transform: translateY(-2px);
+}
+

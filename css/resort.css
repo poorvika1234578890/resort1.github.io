@@ -1,0 +1,359 @@
+/* Define a variable for the consistent section gap */
+:root {
+    --section-gap: 50px; 
+}
+
+/* --- EXISTING RESORT STYLES (WITH UNIFIED GAP) --- */
+.resort-section {
+    width: 950px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    /* CHANGE: Apply consistent margin for the entire component */
+      margin: 0 auto 0; /* Top margin from surrounding elements, 0 bottom */
+    font-family: 'Poppins', sans-serif;
+}
+
+.resort-header {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px;
+    border-left: 5px solid orange;
+}
+
+.resort-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: orange;
+    margin-right: 15px;
+}
+
+.resort-name {
+    font-size: 40px;
+    color: #111;
+    font-weight: 900;
+    margin: 0; 
+}
+
+/* 🎯 FIX: This is the first main section component after the resort-section header. */
+/* We'll apply the gap *after* this component to the next one (room-container). */
+.about_area {
+    /* REMOVED: margin-top: 50px !important; */
+    margin-top: 0; /* Remove gap between resort-header and about_area */
+    padding-top: 0;
+    /* NEW: Add consistent bottom gap AFTER the about_area component */
+    margin-bottom: 0;
+}
+
+.resort-image {
+    width: 9cm;
+    height: 9cm;
+    object-fit: cover;
+    display: inline-block;
+    margin: 5px;
+}
+
+/* --- ROOM CARD STYLES (WITH UNIFIED GAP) --- */
+
+/* Container for the whole layout */
+.room-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    /* CHANGE: Apply consistent margin-bottom for a uniform gap to the next section */
+    margin: 20px auto var(--section-gap); 
+    margin-top: 0 !important;
+    height: 400px;
+}
+
+/* ... rest of the unchanged styles (room-container .room-card, .overlay-text, etc.) ... */
+
+/* Base style for both room cards */
+.room-container .room-card {
+    flex: 1;
+    position: relative; /* CRITICAL: Positioning context */
+    color: white;
+    overflow: hidden; 
+    transition: none;
+    cursor: pointer;
+}
+
+/* Style for the image tag (Highly Specific) */
+.room-container .room-card .room-image {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 1; 
+    
+    /* 🛠️ FIX FOR THE BLUE LINE/GAP */
+    display: block; 
+}
+
+/* Gradient Overlay Effect */
+.room-container .room-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; 
+}
+
+/* Positioning and styling for the text overlay */
+.room-container .overlay-text {
+    position: absolute; 
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    z-index: 3; 
+}
+
+.room-container .room-name {
+    font-size: 2.2em;
+    margin: 5px 0 0 0;
+    font-weight: 700;
+}
+
+.room-container .price {
+    font-size: 1.1em;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Optional: Subtle Hover Effect */
+.room-container .room-card:hover {
+    transform: none;
+}
+
+/* Optional: Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .room-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .room-container .room-card {
+        height: 300px;
+    }
+}
+.faq-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-top: 3px solid #ff6600;
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-section h2 {
+    color: #ff6600;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+/* FAQ Item */
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Question Button */
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #e65c00;
+}
+
+/* Answer (hidden by default) */
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 15px;
+}
+.thrilliopia-btn {
+  display: inline-block;
+  background-color: #f05454; /* Thrilliopia brand color */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(240, 84, 84, 0.3);
+}
+
+.thrilliopia-btn:hover {
+  background-color: #d84343;
+  box-shadow: 0 6px 15px rgba(240, 84, 84, 0.5);
+  transform: translateY(-2px);
+}
+
+
+
+/* UNIVERSAL RESORT LAYOUT FIX */
+.resort-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    align-items: flex-start;
+}
+
+/* LEFT: Two Images */
+.resort-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 45%;
+}
+
+.resort-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* RIGHT: Heading + Description */
+.resort-right {
+    width: 50%;
+}
+
+/* Heading */
+.resort-heading {
+    display: flex;
+    align-items: center;
+    border-left: 5px solid orange;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.resort-number {
+    font-size: 50px;
+    font-weight: 900;
+    color: orange;
+    margin-right: 15px;
+}
+
+.resort-name {
+    font-size: 36px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+/* Description */
+.resort-description {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* For Responsive Screens */
+@media (max-width: 900px) {
+    .resort-block {
+        flex-direction: column;
+    }
+    .resort-left, .resort-right {
+        width: 100%;
+    }
+}
+.line-button {
+    /* Button Appearance */
+    display: inline-block; /* Essential for padding and width to work */
+    padding: 12px 25px; /* Adds vertical and horizontal padding */
+    text-align: center;
+    text-decoration: none; /* Removes the underline */
+    
+    /* Color and Background */
+    background-color:rgb(255, 132, 0); /* Your desired orange color */
+    color: #FFFFFF !important; /* Forces the text to be white */
+    border: none; /* Ensures no border interferes */
+    border-radius: 5px; /* Adds slight rounding */
+    
+    /* Font */
+    font-size: 16px; 
+    font-weight: 500;
+    
+    /* Transition for hover effect */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.line-button:hover {
+    background-color: rgb(255, 132, 0); /* A slightly darker shade of orange on hover */
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+.top-resort-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: black;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.footer_widget_wrap {
+    display: flex;
+    flex-wrap: nowrap;    /* keep in one row */
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer_widget {
+    flex: 1;              /* equal width */
+}
+@media(max-width: 992px){
+  .footer-flex {
+    flex-wrap: wrap;
+  }
+  .footer-flex .footer_widget {
+    flex: 0 0 48%;
+    margin-bottom: 20px;
+  }
+}
+
+@media(max-width: 576px){
+  .footer-flex .footer_widget {
+    flex: 0 0 100%;
+  }
+}
+
+
+
+
+/* Make resort name clickable without changing design */
+.resort-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.resort-name a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,378 @@
+/* ============================================================
+   GLOBAL RESET
+=========================================================== */
+* { /*box-sizing: border-box;*/
+
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================================
+   MOBILE HEADER — SHOW BOOK NOW + HAMBURGER
+=========================================================== */
+@media (max-width: 992px) {
+
+    /* Hide desktop navigation */
+    .main-menu {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Header layout */
+    .header-area .main-header-area {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 12px 15px !important;
+        position: relative !important;
+        z-index: 9999 !important;
+    }
+
+    /* Logo scaling */
+    .logo-img img {
+        width: 120px !important;
+    }
+
+    /* BOOK NOW — force show */
+    .book_btn {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        position: absolute !important;
+        top: 8px !important;
+        right: 55px !important;
+
+        padding: 6px 14px !important;
+        font-size: 13px !important;
+        background: #ff6600 !important;
+        color: #fff !important;
+        border-radius: 4px !important;
+        z-index: 99999 !important;
+    }
+
+    .book_btn a {
+        color: #fff !important;
+        font-weight: 600 !important;
+        line-height: normal !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    /* Hamburger button */
+    .slicknav_btn {
+        display: block !important;
+        position: absolute !important;
+        right: 10px !important;
+        top: 6px !important;
+        z-index: 999999 !important;
+    }
+
+    /* Mobile menu */
+    .mobile_menu,
+    .slicknav_menu {
+        display: block !important;
+        margin-top: 45px !important;
+        position: relative !important;
+        z-index: 9999 !important;
+    }
+
+    .slicknav_nav {
+        width: 100% !important;
+        background: #fff !important;
+        padding: 10px 0 !important;
+        border-top: 1px solid #eee !important;
+    }
+
+    .slicknav_nav a {
+        font-size: 18px !important;
+        padding: 10px 15px !important;
+    }
+}
+
+/* ============================================================
+   MOBILE — Other Fixes
+=========================================================== */
+@media (max-width: 768px) {
+
+    .bradcam_area h3,
+    .slider_text h3 {
+        font-size: 26px !important;
+        line-height: 32px !important;
+        text-align: center !important;
+    }
+
+    .row { flex-direction: column !important; }
+
+    .resort-block {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .resort-right { order: -1 !important; }
+
+    .resort-left {
+        display: flex !important;
+        gap: 10px !important;
+    }
+
+    .resort-left img {
+        width: 48% !important;
+        border-radius: 6px;
+    }
+
+    .resort-number {
+        font-size: 28px !important;
+        color: #ff6600 !important;
+    }
+
+    .resort-name {
+        font-size: 22px !important;
+        font-weight: bold !important;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .resort-left {
+        flex-direction: column !important;
+    }
+
+    .resort-left img {
+        width: 100% !important;
+    }
+}
+@media only screen and (max-width: 767px) {
+    
+    /* 1. Reset Columns and Enable Stacking/Ordering on the Row */
+    .about_area .row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0 !important;
+    }
+    .about_area .col-xl-7,
+    .about_area .col-lg-7,
+    .about_area .col-xl-5,
+    .about_area .col-lg-5 {
+        width: 100% !important; 
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        /* Zero out column side padding for cleaner edge alignment */
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* --- ORDERING THE MAIN BLOCKS --- */
+    
+    /* The Text/Info column (col-xl-5) starts at the top (order: 1) */
+    .about_area .col-xl-5.col-lg-5 {
+        order: 1 !important; 
+        padding-top: 0px !important; /* Ensure no space at the very top */
+        /* >>> KEY FIX: ADD PADDING TO THE BOTTOM TO CREATE THE GAP <<< */
+        padding-bottom: 25px !important; 
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0 !important; 
+    }
+    
+    /* The Images column (col-xl-7) goes in the middle (order: 2) */
+    .about_area .col-xl-7.col-lg-7 {
+        order: 2 !important; 
+        /* Ensure the images column has NO top margin/padding to prevent a double gap */
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* --- FINE-TUNING THE TEXT COLUMN (.about_info) --- */
+    
+    /* The Resort Name (inside .about_info) goes FIRST */
+    .about_info .resort-header {
+        order: 1 !important;
+        /* Rely on parent padding for gap, so zero out this margin */
+        margin-bottom: 0px !important; 
+    }
+
+    /* The Description (p and button) goes THIRD */
+    .about_info p,
+    .about_info .line-button {
+        order: 3 !important; 
+        margin-bottom: 0px !important; /* Ensure no margin below the last text element */
+        margin-top: 0px !important;
+    }
+
+    /* --- IMAGE LAYOUT FIX: Keep images side-by-side --- */
+    .about_thumb2 {
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 15px;
+        flex-wrap: wrap; 
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .about_thumb2 .img_1,
+    .about_thumb2 .img_2 {
+        width: 48% !important; 
+        margin-left: 0 !important; 
+        margin-bottom: 0px !important; 
+    }
+
+    /* --- ROOM CARDS LAST --- */
+    .room-container {
+        display: flex; 
+        flex-direction: column; 
+        padding: 0 15px; 
+        order: 3 !important; 
+        margin-top: 0 !important;
+    }
+    .room-card {
+        width: 100%; 
+        margin-bottom: 0px;
+    }
+    
+    /* Global container zeroing */
+    .about_area {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+@media only screen and (max-width: 767px) {
+    /* ... (rest of your mobile CSS) ... */
+
+    /* Force the button to take up full width on mobile */
+    .about_info .line-button {
+        display: block; /* Changes it from inline to block */
+        width: 100%;
+        text-align: center;
+        /* Makes it span the container width */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box; /* Ensures padding is included in the width */
+    }
+}
+/* Make footer row a flex container */
+.footer .footer_top .container .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* Make each footer column flexible equal width */
+.footer .footer_widget {
+    flex: 1 !important;
+    min-width: 200px;
+}
+
+/* Remove Bootstrap widths that cause breaking */
+.footer .col-xl-3,
+.footer .col-xl-2,
+.footer .col-xl-4,
+.footer .col-lg-3,
+.footer .col-lg-2,
+.footer .col-lg-4,
+.footer .col-md-6 {
+    width: auto !important;
+    max-width: none !important;
+    flex: 1 !important;
+}
+@media(max-width: 992px){
+    .footer .footer_top .container .row {
+        flex-wrap: wrap !important;
+    }
+    .footer .footer_widget {
+        flex: 0 0 48% !important;
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 576px){
+    .footer .footer_widget {
+        flex: 0 0 100% !important;
+    }
+}
+/* Remove left gap only on the first footer column */
+.footer .footer_top .container .row > div:first-child {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+/* Footer layout custom widths */
+.footer .footer_top .container .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Address */
+.footer .footer_top .container .row > div:nth-child(1) {
+    flex: 0.8;
+}
+
+/* Reservation */
+.footer .footer_top .container .row > div:nth-child(2) {
+    flex: 0.8;
+}
+
+/* Navigation */
+.footer .footer_top .container .row > div:nth-child(3) {
+    flex: 1.2;
+}
+
+/* Resources */
+.footer .footer_top .container .row > div:nth-child(4) {
+    flex: 3;
+}
+
+/* Newsletter */
+.footer .footer_top .container .row > div:nth-child(5) {
+    flex: 2;
+}
+@media(max-width: 992px){
+    .footer .footer_top .container .row {
+        flex-wrap: wrap !important;
+    }
+    .footer .footer_top .container .row > div {
+        flex: 0 0 48% !important;
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 576px){
+    .footer .footer_top .container .row > div {
+        flex: 0 0 100% !important;
+    }
+}
+.footer .footer_top .container .row > div:first-child {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+.footer .footer_widget .footer_text {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+.footer_top .container {
+    padding-left: 0 !important;
+}
+.footer .footer_widget:first-child {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+.footer_top .container {
+    max-width: 90% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
