@@ -33,52 +33,6 @@
 
 </head>
 
-<style>
-    #moreItems li {
-    margin-top: 4px;
-}
-/* TWO-COLUMN layout inside MORE */
-#moreItems {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 12px;
-    padding-top: 6px;
-}
-
-/* each link becomes half width = 2 columns */
-#moreItems li {
-    width: 48%;
-    margin: 0;
-}
-
-/* text styling */
-#moreItems li a {
-    font-size: 13.5px;
-    line-height: 1.25;
-    display: block;
-    white-space: normal;
-}
-
-/* LIMIT HEIGHT so it never becomes long */
-#moreItems {
-    max-height: 180px;   /* adjust if you want */
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-top: 1px solid #eee;
-    padding-top: 8px;
-}
-
-/* nice slim scrollbar */
-#moreItems::-webkit-scrollbar {
-    width: 6px;
-}
-#moreItems::-webkit-scrollbar-thumb {
-    background: #c7c7c7;
-    border-radius: 4px;
-}
-
-</style>
-
 <body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -109,7 +63,7 @@
                                     
                                     <li>
                                         <a href="#">Pages</a>
-                                        <!-- <ul class="submenu">
+                                        <ul class="submenu">
                                             <li><a href="family.html">Best Resort in Bangalore for Families</a></li>
                                             <li><a href="corporate.html">Corporate team outing resorts in Bangalore</a></li>
                                             <li><a href="couple.html">Resorts near Bangalore for couples</a></li>
@@ -119,27 +73,6 @@
                                             <li><a href="night_stay_resorts.html">Resorts in Bangalore with Night stay</a></li>
                                             <li><a href="adventure_resorts.html">Resorts in Bangalore with Adventure</a></li>
                                             <li><a href="wedding_resorts.html">Resorts in Bangalore for Weddings.</a></li>
-                                        </ul> -->
-                                        <ul class="submenu">
-
-                                            <!-- Always visible -->
-                                            <li><a href="family.html">Best Resort in Bangalore for Families</a></li>
-                                            <li><a href="corporate.html">Corporate team outing resorts in Bangalore</a></li>
-                                            <li><a href="couple.html">Resorts near Bangalore for couples</a></li>
-
-                                            <!-- MORE button -->
-                                            <li><a href="javascript:void(0)" id="showMore">More ▾</a></li>
-
-                                            <!-- HIDDEN SECTION -->
-                                            <div id="moreItems" style="display:none;">
-                                                <li><a href="weekend_resorts.html">Resorts near Bangalore for weekend</a></li>
-                                                <li><a href="pet_friendly_resorts.html">Pet Friendly Resorts in Bangalore</a></li>
-                                                <li><a href="resorts_with_activities.html">Resorts in Bangalore with Activities</a></li>
-                                                <li><a href="night_stay_resorts.html">Resorts in Bangalore with Night stay</a></li>
-                                                <li><a href="adventure_resorts.html">Resorts in Bangalore with Adventure</a></li>
-                                                <li><a href="wedding_resorts.html">Resorts in Bangalore for Weddings</a></li>
-                                            </div>
-
                                         </ul>
 
                                     </li>
@@ -1305,21 +1238,6 @@ A perfect spot for quiet stays, nature lovers, and weekend relaxation.
 
         });
     </script>
-<!-- <----------------- lil change of more button start ------------------> -->
-    <script>
-        document.getElementById("showMore").onclick = function() {
-            var x = document.getElementById("moreItems");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-                this.innerHTML = "Less ▴";
-            } else {
-                x.style.display = "none";
-                this.innerHTML = "More ▾";
-            }
-        };
-    </script>
-<!-- <----------- End ---------------------> -->
-
 
 </body>
 
