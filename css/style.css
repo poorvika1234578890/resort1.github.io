@@ -4110,3 +4110,7 @@ h6 {
     display: block !important;
   }
 }
+.menu li {
+  white-space: nowrap;
+}
+
